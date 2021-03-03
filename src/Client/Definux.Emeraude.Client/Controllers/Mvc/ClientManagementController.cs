@@ -48,7 +48,7 @@ namespace Definux.Emeraude.Client.Controllers.Mvc
             }
 
             return await this.RedirectToExecutionResultAsync(
-                requestResult.Successed,
+                requestResult.Succeeded,
                 Titles.ChangeEmailSuccess,
                 Titles.ChangeEmailFailed,
                 Messages.ChangedEmailSuccessMessage,

@@ -6,113 +6,7 @@
 // </auto-generated>
 // ------------------------------------------------------------------------------
 
-/**
- * @typedef CreatedResult
- * @property {string} createdEntityId
- */
-/**
- * @typedef AddDogCommand
- * @property {string} name
- * @property {number} type
- * @property {number} breed
- * @property {string} nullableGuid
- * @property {string} nullableTimeSpan
- */
-/**
- * @typedef SimpleResult
- * @property {boolean} successed
- */
-/**
- * @typedef ComplexRequestResult
- * @property {boolean} success
- * @property {PaginatedList} paginatedCollection
- */
-/**
- * @typedef PaginatedList
- * @property {Array<SomeResultItem>} items
- * @property {number} allItemsCount
- * @property {number} itemsCount
- * @property {number} pagesCount
- * @property {number} pageSize
- * @property {number} currentPage
- * @property {number} startRow
- */
-/**
- * @typedef SomeResultItem
- * @property {string} id
- * @property {string} name
- */
-/**
- * @typedef ComplexRequestCommand
- * @property {string} description
- * @property {Array<NestedComplexType>} nestedCollection
- */
-/**
- * @typedef NestedComplexType
- * @property {string} id
- * @property {Array<DeepNestedComplexType>} deepCollection
- */
-/**
- * @typedef DeepNestedComplexType
- * @property {string} name
- * @property {number} complexEnum
- */
-/**
- * @typedef EnumValueItem
- * @property {string} name
- * @property {number} value
- * @property {string} key
- */
-/**
- * @typedef LogFrontEndErrorCommand
- * @property {string} stackTrace
- * @property {string} source
- * @property {string} method
- * @property {string} message
- */
-/**
- * @typedef UserAvatarTypeResult
- * @property {boolean} isDefault
- */
-/**
- * @typedef ChangeUserAvatarCommand
- * @property {string} avatarFileBase64
- * @property {string} userId
- */
-/**
- * @typedef ChangePasswordCommand
- * @property {string} userId
- * @property {string} currentPassword
- * @property {string} newPassword
- * @property {string} confirmedPassword
- */
-/**
- * @typedef ChangeUserNameCommand
- * @property {string} userId
- * @property {string} newName
- */
-/**
- * @typedef GetUserExternalLoginProvidersResult
- * @property {Array<UserExternalLoginProvider>} providers
- */
-/**
- * @typedef UserExternalLoginProvider
- * @property {string} provider
- * @property {string} providerDisplayName
- */
-/**
- * @typedef RemoveExternalLoginProviderCommand
- * @property {string} userId
- * @property {string} provider
- * @property {string} password
- */
-/**
- * @typedef RequestChangeEmailCommand
- * @property {string} userId
- * @property {string} newEmail
- * @property {string} localCallbackUrl
- * @property {boolean} useLocalization
- */
+import './types';
 
 export class DogsServiceAgent {
 
@@ -121,7 +15,7 @@ export class DogsServiceAgent {
      * @param {AddDogCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<MutationResult>}
      */
     addDog(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/dogs/add`, window.location.origin);
@@ -144,7 +38,7 @@ export class EmptyServiceAgent {
      * EmptyApiController/ExampleAction
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     exampleAction(queryParams = null, headers = null) { 
         let url = new URL(`/api/empty/example`, window.location.origin);
@@ -164,7 +58,7 @@ export class EmptyServiceAgent {
      * @param {ComplexRequestCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<ComplexRequestResult>}
      */
     complexRequestTypeAction(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/empty/complex`, window.location.origin);
@@ -187,7 +81,7 @@ export class EnumsServiceAgent {
      * @param {string} enumTypeName
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<Array<EnumValueItem>>}
      */
     getEnumValueList(enumTypeName, queryParams = null, headers = null) { 
         let url = new URL(`/api/enums/${enumTypeName}`, window.location.origin);
@@ -208,7 +102,7 @@ export class EnumsServiceAgent {
      * @param {number} value
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<EnumValueItem>}
      */
     getEnumValue(enumTypeName, value, queryParams = null, headers = null) { 
         let url = new URL(`/api/enums/${enumTypeName}/${value}`, window.location.origin);
@@ -231,7 +125,7 @@ export class LoggerServiceAgent {
      * @param {LogFrontEndErrorCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     logClientError(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/logger/error`, window.location.origin);
@@ -254,7 +148,7 @@ export class UsersServiceAgent {
      * UsersApiController/GetUserAvatarType
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<UserAvatarTypeResult>}
      */
     getUserAvatarType(queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/avatar/type`, window.location.origin);
@@ -274,7 +168,7 @@ export class UsersServiceAgent {
      * @param {ChangeUserAvatarCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     changeUserAvatar(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/avatar/change`, window.location.origin);
@@ -295,7 +189,7 @@ export class UsersServiceAgent {
      * @param {ChangePasswordCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     changeUserPassword(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/password/change`, window.location.origin);
@@ -316,7 +210,7 @@ export class UsersServiceAgent {
      * @param {ChangeUserNameCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     changeUserName(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/name/change`, window.location.origin);
@@ -336,7 +230,7 @@ export class UsersServiceAgent {
      * UsersApiController/GetCurrentUserExternalLoginProviders
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<GetUserExternalLoginProvidersResult>}
      */
     getCurrentUserExternalLoginProviders(queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/external-login-providers`, window.location.origin);
@@ -356,7 +250,7 @@ export class UsersServiceAgent {
      * @param {RemoveExternalLoginProviderCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     removeCurrentUserExternalLoginProvider(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/remove-external-login-provider`, window.location.origin);
@@ -377,7 +271,7 @@ export class UsersServiceAgent {
      * @param {RequestChangeEmailCommand} request
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     requestChangeEmailForTheCurrentUser(request, queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/request-change-email`, window.location.origin);
@@ -397,7 +291,7 @@ export class UsersServiceAgent {
      * UsersApiController/RequestResetPasswordForTheCurrentUser
      * @param {Object} queryParams
      * @param {Object} headers
-     * @returns {Promise}
+     * @returns {Promise<SimpleResult>}
      */
     requestResetPasswordForTheCurrentUser(queryParams = null, headers = null) { 
         let url = new URL(`/api/users/current/reset-password`, window.location.origin);
@@ -417,24 +311,32 @@ export class UsersServiceAgent {
 /**
  * @type {DogsServiceAgent}
  */
-export const dogsServiceAgent = new DogsServiceAgent();
+const dogsServiceAgent = new DogsServiceAgent();
 
 /**
  * @type {EmptyServiceAgent}
  */
-export const emptyServiceAgent = new EmptyServiceAgent();
+const emptyServiceAgent = new EmptyServiceAgent();
 
 /**
  * @type {EnumsServiceAgent}
  */
-export const enumsServiceAgent = new EnumsServiceAgent();
+const enumsServiceAgent = new EnumsServiceAgent();
 
 /**
  * @type {LoggerServiceAgent}
  */
-export const loggerServiceAgent = new LoggerServiceAgent();
+const loggerServiceAgent = new LoggerServiceAgent();
 
 /**
  * @type {UsersServiceAgent}
  */
-export const usersServiceAgent = new UsersServiceAgent();
+const usersServiceAgent = new UsersServiceAgent();
+
+export {
+  dogsServiceAgent,
+  emptyServiceAgent,
+  enumsServiceAgent,
+  loggerServiceAgent,
+  usersServiceAgent,
+}

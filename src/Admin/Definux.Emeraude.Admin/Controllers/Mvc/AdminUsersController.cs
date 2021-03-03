@@ -99,7 +99,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
             if (user != null)
             {
                 var result = await this.Mediator.Send(new AssignRolesToUserCommand(user.Id, model?.SelectedRoles));
-                if (result.Successed)
+                if (result.Succeeded)
                 {
                     this.ShowSuccessNotification($"Roles have been assigned successfully to {user.Name}");
                     return this.RedirectToAction(nameof(this.GetAll));

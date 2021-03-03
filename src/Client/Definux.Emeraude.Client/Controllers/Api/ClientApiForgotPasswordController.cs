@@ -30,7 +30,7 @@ namespace Definux.Emeraude.Client.Controllers.Api
             {
                 var requestResult = await this.Mediator.Send(request);
 
-                if (requestResult.Successed)
+                if (requestResult.Succeeded)
                 {
                     return this.Ok();
                 }

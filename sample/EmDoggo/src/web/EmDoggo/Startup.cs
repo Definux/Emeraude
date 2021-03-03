@@ -7,6 +7,7 @@ using EmDoggo.Application.DataSourceMaps;
 using EmDoggo.Application.Interfaces;
 using EmDoggo.Application.Mapping;
 using EmDoggo.Application.Requests.Queries.AdminDashboard;
+using EmDoggo.Application.Shared;
 using EmDoggo.Infrastructure.Extensions;
 using EmDoggo.Infrastructure.Persistance;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +54,8 @@ namespace EmDoggo
                 options.AddAssembly("Definux.Emeraude");
                 options.AddAssembly("EmDoggo");
 
+                options.ConstantsTypes.Add(typeof(SomeConstants));
+                
                 options.AddDefaultVueModules();
                 options.AddDefaultXamarinModules();
             });

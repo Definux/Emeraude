@@ -2,27 +2,26 @@
 using System.IO;
 using System.Linq;
 using Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Abstractions;
-using Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.ServiceAgents.Templates;
+using Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates;
 using Definux.Emeraude.Admin.ClientBuilder.ScaffoldModules;
 using Definux.Emeraude.Admin.ClientBuilder.Services;
 using Definux.Utilities.Functions;
-using Definux.Utilities.Objects;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
-namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.ServiceAgents
+namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi
 {
     /// <summary>
-    /// Vue service agents module for generation of API endpoints as help functions in Vue application.
+    /// Vue web API module for generation of API endpoints as help functions and all supported classes and enums in Vue application.
     /// </summary>
-    public class VueServiceAgentsModule : VueScaffoldModule
+    public class VueWebApiModule : VueScaffoldModule
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="VueServiceAgentsModule"/> class.
+        /// Initializes a new instance of the <see cref="VueWebApiModule"/> class.
         /// </summary>
-        public VueServiceAgentsModule()
-            : base("Vue Service Agents", true)
+        public VueWebApiModule()
+            : base("Vue Web API", true)
         {
         }
 
@@ -46,6 +45,14 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Servi
                 TemplateType = typeof(EnumsTemplate),
                 RenderFunction = this.RenderEnums,
             });
+
+            this.AddFile(new ModuleFile
+            {
+                Name = "types.js",
+                RelativePath = relativePath,
+                TemplateType = typeof(TypesTemplate),
+                RenderFunction = this.RenderTypes,
+            });
         }
 
         /// <inheritdoc/>
@@ -53,15 +60,24 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Servi
         {
         }
 
-        private string RenderEndpoints(ModuleFile file)
+        private string RenderTypes(ModuleFile file)
         {
             var endpointService = this.GetService<IEndpointService>();
-            var endpoints = endpointService.GetAllEndpoints();
             var classes = endpointService.GetAllEndpointsClasses();
 
             return file.RenderTemplate(new Dictionary<string, object>
             {
                 { "Classes", classes },
+            });
+        }
+
+        private string RenderEndpoints(ModuleFile file)
+        {
+            var endpointService = this.GetService<IEndpointService>();
+            var endpoints = endpointService.GetAllEndpoints();
+
+            return file.RenderTemplate(new Dictionary<string, object>
+            {
                 { "EndpointsControllers", endpoints.Select(x => x.ControllerName).Distinct().ToList() },
                 { "Endpoints", endpoints },
             });

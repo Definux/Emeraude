@@ -38,7 +38,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.MakeLanguageDef
                 var languages = await this.context
                     .Languages
                     .AsQueryable()
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken);
 
                 foreach (var language in languages)
                 {
@@ -52,7 +52,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.MakeLanguageDef
                 if (languages.Any(x => x.IsDefault))
                 {
                     this.context.Languages.UpdateRange(languages);
-                    await this.context.SaveChangesAsync();
+                    await this.context.SaveChangesAsync(cancellationToken);
 
                     return new SimpleResult(true);
                 }

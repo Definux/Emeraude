@@ -10,7 +10,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateKeyWithVa
     /// <summary>
     /// Command which create translation key into localization context.
     /// </summary>
-    public class CreateKeyWithValuesCommand : NewKeyWithValuesRequest, IRequest<CreatedResult>
+    public class CreateKeyWithValuesCommand : NewKeyWithValuesRequest, IRequest<MutationResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateKeyWithValuesCommand"/> class.
@@ -32,7 +32,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateKeyWithVa
         /// <summary>
         /// Create key with values command handler.
         /// </summary>
-        public class CreateKeyWithValuesCommandHandler : IRequestHandler<CreateKeyWithValuesCommand, CreatedResult>
+        public class CreateKeyWithValuesCommandHandler : IRequestHandler<CreateKeyWithValuesCommand, MutationResult>
         {
             private readonly ILocalizationContext context;
 
@@ -46,7 +46,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateKeyWithVa
             }
 
             /// <inheritdoc/>
-            public async Task<CreatedResult> Handle(CreateKeyWithValuesCommand request, CancellationToken cancellationToken)
+            public async Task<MutationResult> Handle(CreateKeyWithValuesCommand request, CancellationToken cancellationToken)
             {
                 var key = new TranslationKey
                 {
@@ -64,9 +64,9 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateKeyWithVa
 
                 this.context.Keys.Add(key);
 
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
-                return new CreatedResult(key.Id);
+                return new MutationResult(key.Id.ToString());
             }
         }
     }

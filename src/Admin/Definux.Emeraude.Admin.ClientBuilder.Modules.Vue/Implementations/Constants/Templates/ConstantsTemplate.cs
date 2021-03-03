@@ -7,24 +7,23 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates
+namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Definux.Emeraude.Domain.Localization;
-    using Definux.Utilities.Extensions;
-    using WebMarkupMin.Core;
+    using Definux.Emeraude.Admin.ClientBuilder.Models;
     using Definux.Emeraude.Admin.ClientBuilder.Shared;
+    using Definux.Utilities.Extensions;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
+    #line 1 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class StaticContentComponentTemplate : StaticContentComponentTemplateBase
+    public partial class ConstantsTemplate : ConstantsTemplateBase
     {
 #line hidden
         /// <summary>
@@ -33,80 +32,60 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Stati
         public virtual string TransformText()
         {
             
-            #line 10 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
- var htmlMinifier = new HtmlMinifier(); 
-            
-            #line default
-            #line hidden
-            
-            #line 11 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
- var contentKey = (ContentKey)Session["Key"]; 
-            
-            #line default
-            #line hidden
-            
-            #line 12 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
- var defaultLanguage = (Language)Session["DefaultLanguage"]; 
-            
-            #line default
-            #line hidden
-            this.Write("<template>\r\n<div id=\"static-content-");
-            
-            #line 14 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(contentKey.Key.ToLower().Replace("_", "-")));
-            
-            #line default
-            #line hidden
-            this.Write("\">\r\n");
-            
-            #line 15 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
- foreach (var content in contentKey.StaticContentList) { 
-            
-            #line default
-            #line hidden
-            this.Write("<div v-if=\"languageId === ");
-            
-            #line 16 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(content.LanguageId));
-            
-            #line default
-            #line hidden
-            this.Write("\">\r\n");
-            
-            #line 17 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(htmlMinifier.Minify(content.Content).MinifiedContent));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n</div>\r\n");
-            
-            #line 19 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write("</div>\r\n</template>\r\n\r\n<script>\r\n");
-            
-            #line 24 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
+            #line 9 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClientBuilderConstants.AutoGeneratedHeaderText));
             
             #line default
             #line hidden
-            this.Write("\r\n    export default {\r\n        name: \"");
+            this.Write("\r\n\r\n");
             
-            #line 26 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(string.Empty, contentKey.Key.Split("_").Select(x => x.ToLower().ToFirstUpper()))));
-            
-            #line default
-            #line hidden
-            this.Write("StaticContent\",\r\n        props: {\r\n            languageId: {\r\n                type: Number,\r\n                default: ");
-            
-            #line 30 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\StaticContent\Templates\StaticContentComponentTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(defaultLanguage.Id));
+            #line 11 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+ foreach (var constantsGroup in (Dictionary<string, Dictionary<string, string>>)Session["Constants"]) { 
             
             #line default
             #line hidden
-            this.Write("\r\n            }\r\n        }\r\n    }\r\n</script>");
+            this.Write("// ");
+            
+            #line 12 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(constantsGroup.Key));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 13 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+ foreach (var constant in constantsGroup.Value) { 
+            
+            #line default
+            #line hidden
+            this.Write("export const ");
+            
+            #line 14 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(constant.Key));
+            
+            #line default
+            #line hidden
+            this.Write(" = ");
+            
+            #line 14 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(constant.Value));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 15 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 17 "D:\GitHubWorkspace\Emeraude\src\Admin\Definux.Emeraude.Admin.ClientBuilder.Modules.Vue\Implementations\Constants\Templates\ConstantsTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -118,7 +97,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Stati
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class StaticContentComponentTemplateBase
+    public class ConstantsTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

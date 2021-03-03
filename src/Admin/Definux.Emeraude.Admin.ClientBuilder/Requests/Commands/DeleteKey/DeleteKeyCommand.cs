@@ -37,11 +37,11 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.DeleteKey
                 var keyToRemove = await this.context
                     .Keys
                     .AsQueryable()
-                    .FirstOrDefaultAsync(x => x.Id == request.KeyId);
+                    .FirstOrDefaultAsync(x => x.Id == request.KeyId, cancellationToken);
 
                 this.context.Keys.Remove(keyToRemove);
 
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
                 return new SimpleResult(true);
             }

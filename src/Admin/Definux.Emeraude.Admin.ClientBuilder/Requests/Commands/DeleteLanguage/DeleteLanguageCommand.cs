@@ -37,14 +37,14 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.DeleteLanguage
                 var language = await this.context
                         .Languages
                         .AsQueryable()
-                        .FirstOrDefaultAsync(x => x.Id == request.LanguageId);
+                        .FirstOrDefaultAsync(x => x.Id == request.LanguageId, cancellationToken);
 
                 if (language.IsDefault)
                 {
                     var firstFoundLanguage = await this.context
                         .Languages
                         .AsQueryable()
-                        .FirstOrDefaultAsync(x => x.Id != request.LanguageId);
+                        .FirstOrDefaultAsync(x => x.Id != request.LanguageId, cancellationToken);
 
                     if (firstFoundLanguage != null)
                     {
