@@ -61,7 +61,7 @@ namespace Definux.Emeraude.Client.Controllers.Mvc
             try
             {
                 var result = await this.Mediator.Send(request);
-                if (!result.Successed)
+                if (!result.Succeeded)
                 {
                     await this.Logger.LogErrorAsync(new ArgumentException($"Invalid email ({request.Email}) from reset password form."));
                 }

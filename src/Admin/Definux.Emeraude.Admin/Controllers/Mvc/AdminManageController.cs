@@ -92,7 +92,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
 
                 var requestResult = await this.Mediator.Send(new ActivateTwoFactorAuthenticationCommand(model.Code));
 
-                if (requestResult.Successed)
+                if (requestResult.Succeeded)
                 {
                     var responseModel = new AdminTwoFactorAuthenticationViewModel
                     {
@@ -169,7 +169,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
                     ConfirmedPassword = model.ConfirmedPassword,
                 });
 
-                if (requestResult.Successed)
+                if (requestResult.Succeeded)
                 {
                     this.ShowSuccessNotification("Password has been changed successfully.");
                     return this.View();
@@ -228,7 +228,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
                 request.ConfigureCallbackOptions("admin/manage/change-email", false);
                 var requestResult = await this.Mediator.Send(request);
 
-                if (requestResult.Successed)
+                if (requestResult.Succeeded)
                 {
                     this.ShowSuccessNotification("Email request has been sent successfully. Check your email for confirmation.");
                     return this.View();
@@ -279,7 +279,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
             }
 
             this.ShowComputationNotification(
-                requestResult.Successed,
+                requestResult.Succeeded,
                 "Your email has been changed successfully.",
                 "Your email has not been changed successfully.");
 

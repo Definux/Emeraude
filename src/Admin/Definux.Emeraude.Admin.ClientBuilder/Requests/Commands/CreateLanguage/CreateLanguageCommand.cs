@@ -12,7 +12,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateLanguage
     /// <summary>
     /// Command that create a language.
     /// </summary>
-    public class CreateLanguageCommand : CreateLanguageRequest, IRequest<CreatedResult>
+    public class CreateLanguageCommand : CreateLanguageRequest, IRequest<MutationResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateLanguageCommand"/> class.
@@ -33,7 +33,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateLanguage
         }
 
         /// <inheritdoc/>
-        public class CreateLanguageCommandHandler : IRequestHandler<CreateLanguageCommand, CreatedResult>
+        public class CreateLanguageCommandHandler : IRequestHandler<CreateLanguageCommand, MutationResult>
         {
             private readonly ILocalizationContext context;
             private readonly IMapper mapper;
@@ -50,10 +50,10 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateLanguage
             }
 
             /// <inheritdoc/>
-            public async Task<CreatedResult> Handle(CreateLanguageCommand request, CancellationToken cancellationToken)
+            public async Task<MutationResult> Handle(CreateLanguageCommand request, CancellationToken cancellationToken)
             {
                 var language = this.mapper.Map<Language>(request);
-                var keys = await this.context.Keys.AsQueryable().ToListAsync();
+                var keys = await this.context.Keys.AsQueryable().ToListAsync(cancellationToken);
                 foreach (var key in keys)
                 {
                     language.Translations.Add(new TranslationValue
@@ -63,9 +63,9 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateLanguage
                 }
 
                 this.context.Languages.Add(language);
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
-                return new CreatedResult(language.Id);
+                return new MutationResult(language.Id.ToString());
             }
         }
     }

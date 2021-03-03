@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Definux.Emeraude.Application.Localization;
 using Definux.Utilities.Objects;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.EditTranslation
 {
@@ -39,16 +40,14 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.EditTranslation
             /// <inheritdoc/>
             public async Task<SimpleResult> Handle(EditTranslationCommand request, CancellationToken cancellationToken)
             {
-                var translationEntity = this.context
+                var translationEntity = await this.context
                     .Values
-                    .AsQueryable()
-                    .Where(x => x.Id == request.TranslationId)
-                    .FirstOrDefault();
+                    .FirstOrDefaultAsync(x => x.Id == request.TranslationId, cancellationToken);
 
                 translationEntity.Value = request.NewValue;
 
                 this.context.Values.Update(translationEntity);
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
                 return new SimpleResult(true);
             }

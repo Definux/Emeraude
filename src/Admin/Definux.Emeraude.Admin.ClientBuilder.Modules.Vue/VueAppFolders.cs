@@ -39,5 +39,10 @@
         /// StaticContent folder name.
         /// </summary>
         public const string StaticContent = "static-content";
+
+        /// <summary>
+        /// Shared folder name.
+        /// </summary>
+        public const string Shared = "shared";
     }
 }

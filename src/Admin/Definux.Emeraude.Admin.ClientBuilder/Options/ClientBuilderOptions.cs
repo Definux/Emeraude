@@ -18,6 +18,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Options
         {
             this.Assemblies = new List<Assembly>();
             this.ModulesTypes = new List<Type>();
+            this.ConstantsTypes = new List<Type>();
         }
 
         /// <summary>
@@ -29,6 +30,11 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Options
         /// List of all scaffold modules used for code generation from the client builder.
         /// </summary>
         public List<Type> ModulesTypes { get; internal set; }
+
+        /// <summary>
+        /// List of all classes types which will be scanned for constants.
+        /// </summary>
+        public List<Type> ConstantsTypes { get; private set; }
 
         /// <summary>
         /// Path of the web application used of the client builder.

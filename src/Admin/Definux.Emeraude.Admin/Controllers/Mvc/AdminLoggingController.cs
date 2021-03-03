@@ -63,7 +63,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
                 _ => SimpleResult.UnsuccessfulResult
             };
 
-            if (result.Successed)
+            if (result.Succeeded)
             {
                 this.ShowSuccessNotification("Log has been deleted successfully.");
             }

@@ -14,7 +14,7 @@ using Definux.Emeraude.Admin.ClientBuilder.DataAnnotations;
 
 namespace EmDoggo.Application.Requests.Commands.AddDog
 {
-    public class AddDogCommand : IRequest<CreatedResult>, IMapFrom<Dog>
+    public class AddDogCommand : IRequest<MutationResult>, IMapFrom<Dog>
     {
         public string Name { get; set; }
 
@@ -26,7 +26,7 @@ namespace EmDoggo.Application.Requests.Commands.AddDog
         
         public TimeSpan? NullableTimeSpan { get; set; }
         
-        public class AddDogCommandHandler : IRequestHandler<AddDogCommand, CreatedResult>
+        public class AddDogCommandHandler : IRequestHandler<AddDogCommand, MutationResult>
         {
             private readonly IEntityContext context;
             private readonly IMapper mapper;
@@ -42,7 +42,7 @@ namespace EmDoggo.Application.Requests.Commands.AddDog
                 this.currentUserProvider = currentUserProvider;
             }
 
-            public async Task<CreatedResult> Handle(AddDogCommand request, CancellationToken cancellationToken)
+            public async Task<MutationResult> Handle(AddDogCommand request, CancellationToken cancellationToken)
             {
                 var currentUser = await this.currentUserProvider.GetCurrentUserAsync();
                 var dogEntity = this.mapper.Map<Dog>(request);
@@ -52,7 +52,7 @@ namespace EmDoggo.Application.Requests.Commands.AddDog
                 this.context.Dogs.Add(dogEntity);
                 await this.context.SaveChangesAsync();
 
-                return new CreatedResult(dogEntity.Id);
+                return new MutationResult(dogEntity.Id.ToString());
             }
         }
     }

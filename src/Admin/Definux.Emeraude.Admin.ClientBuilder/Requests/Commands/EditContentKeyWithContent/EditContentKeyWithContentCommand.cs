@@ -60,7 +60,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.EditContentKeyW
                 var keyToEdit = await this.context
                     .ContentKeys
                     .AsQueryable()
-                    .FirstOrDefaultAsync(x => x.Id == request.KeyId);
+                    .FirstOrDefaultAsync(x => x.Id == request.KeyId, cancellationToken);
 
                 this.mapper.Map(request, keyToEdit);
 
@@ -71,12 +71,12 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.EditContentKeyW
                 {
                     var currentContent = await this.context
                         .StaticContent
-                        .FirstOrDefaultAsync(x => x.Id == staticContentListItem.Id);
+                        .FirstOrDefaultAsync(x => x.Id == staticContentListItem.Id, cancellationToken);
                     this.mapper.Map(staticContentListItem, currentContent);
                     this.context.StaticContent.Update(currentContent);
                 }
 
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
                 return new SimpleResult(true);
             }

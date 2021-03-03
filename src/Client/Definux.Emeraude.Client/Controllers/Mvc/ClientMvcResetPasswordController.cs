@@ -74,7 +74,7 @@ namespace Definux.Emeraude.Client.Controllers.Mvc
             {
                 var requestResult = await this.Mediator.Send(request);
 
-                if (requestResult.Successed)
+                if (requestResult.Succeeded)
                 {
                     return await this.RedirectToSucceededExecutionResultAsync(
                         Titles.ResetPasswordSuccess,

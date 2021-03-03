@@ -8,8 +8,18 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Definux.Emeraude.Admin.ClientBuilder.Extensions
 {
+    /// <summary>
+    /// Extensions for <see cref="IServiceCollection"/>.
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Registration and configuration of Client Builder.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="optionsAction"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">Exception in case options are missing.</exception>
         public static IServiceCollection AddEmeraudeClientBuilder(this IServiceCollection services, Action<ClientBuilderOptions> optionsAction)
         {
             ClientBuilderOptions builderOptions = new ClientBuilderOptions();
@@ -24,13 +34,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Extensions
             var serviceProvider = services.BuildServiceProvider();
             var configuration = serviceProvider.GetService<IConfiguration>();
 
-            services.Configure<ClientBuilderOptions>(options =>
-            {
-                options.Assemblies = builderOptions.Assemblies;
-                options.WebAppPath = builderOptions.WebAppPath;
-                options.MobileAppPath = builderOptions.MobileAppPath;
-                options.ModulesTypes = builderOptions.ModulesTypes;
-            });
+            services.Configure(optionsAction);
 
             services.AddScoped<IPageService, PageService>();
             services.AddScoped<IEndpointService, EndpointService>();

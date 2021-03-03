@@ -10,7 +10,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateContentKe
     /// <summary>
     /// Command that create a content key with its static contents for each language.
     /// </summary>
-    public class CreateContentKeyWithContentCommand : NewContentKeyWithContentRequest, IRequest<CreatedResult>
+    public class CreateContentKeyWithContentCommand : NewContentKeyWithContentRequest, IRequest<MutationResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContentKeyWithContentCommand"/> class.
@@ -30,7 +30,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateContentKe
         }
 
         /// <inheritdoc/>
-        public class CreateContentKeyWithValuesCommandHandler : IRequestHandler<CreateContentKeyWithContentCommand, CreatedResult>
+        public class CreateContentKeyWithValuesCommandHandler : IRequestHandler<CreateContentKeyWithContentCommand, MutationResult>
         {
             private readonly ILocalizationContext context;
 
@@ -44,7 +44,7 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateContentKe
             }
 
             /// <inheritdoc/>
-            public async Task<CreatedResult> Handle(CreateContentKeyWithContentCommand request, CancellationToken cancellationToken)
+            public async Task<MutationResult> Handle(CreateContentKeyWithContentCommand request, CancellationToken cancellationToken)
             {
                 var key = new ContentKey
                 {
@@ -62,9 +62,9 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Requests.Commands.CreateContentKe
 
                 this.context.ContentKeys.Add(key);
 
-                await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync(cancellationToken);
 
-                return new CreatedResult(key.Id);
+                return new MutationResult(key.Id.ToString());
             }
         }
     }
