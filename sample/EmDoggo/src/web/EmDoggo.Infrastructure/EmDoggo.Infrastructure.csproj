@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Logger\Migrations" />
+    <Folder Include="Persistance\Migrations" />
   </ItemGroup>
 
 </Project>

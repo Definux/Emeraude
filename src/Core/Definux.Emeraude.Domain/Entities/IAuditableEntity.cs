@@ -10,7 +10,7 @@ namespace Definux.Emeraude.Domain.Entities
         /// <summary>
         /// Date of creation of the entity.
         /// </summary>
-        DateTime CreatedOn { get; set; }
+        DateTimeOffset CreatedOn { get; set; }
 
         /// <summary>
         /// Identification of the user that create the entity.
@@ -20,7 +20,7 @@ namespace Definux.Emeraude.Domain.Entities
         /// <summary>
         /// Date of last modification of the entity.
         /// </summary>
-        DateTime UpdatedOn { get; set; }
+        DateTimeOffset UpdatedOn { get; set; }
 
         /// <summary>
         /// Identification of the user that last modified the entity.

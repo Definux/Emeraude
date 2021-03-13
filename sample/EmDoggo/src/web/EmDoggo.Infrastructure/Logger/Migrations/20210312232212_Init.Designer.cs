@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EmDoggo.Infrastructure.Logger.Migrations
 {
     [DbContext(typeof(LoggerContext))]
-    [Migration("20210215153913_Init")]
+    [Migration("20210312232212_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,8 +40,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Headers")
                         .HasColumnType("text");
@@ -79,8 +79,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("EmailAddress")
                         .HasColumnType("text");
@@ -109,8 +109,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Message")
                         .HasColumnType("text");
@@ -142,8 +142,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("FileExtension")
                         .HasColumnType("integer");

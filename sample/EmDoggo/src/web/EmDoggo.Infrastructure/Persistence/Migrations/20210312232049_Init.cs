@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace EmDoggo.Infrastructure.Persistance.Migrations
+namespace EmDoggo.Infrastructure.Persistence.Migrations
 {
     public partial class Init : Migration
     {
@@ -42,7 +42,8 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(maxLength: 128, nullable: true)
+                    Name = table.Column<string>(maxLength: 128, nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,6 +57,7 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
@@ -68,11 +70,10 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
-                    RegistrationDate = table.Column<DateTime>(nullable: false),
+                    RegistrationDate = table.Column<DateTimeOffset>(nullable: false),
                     AvatarUrl = table.Column<string>(nullable: true),
                     RefreshToken = table.Column<string>(nullable: true),
-                    RefreshTokenExpiration = table.Column<DateTime>(nullable: true)
+                    RefreshTokenExpiration = table.Column<DateTimeOffset>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,9 +106,9 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
-                    UpdatedOn = table.Column<DateTime>(nullable: false),
+                    UpdatedOn = table.Column<DateTimeOffset>(nullable: false),
                     UpdatedBy = table.Column<string>(nullable: true),
                     ShopId = table.Column<Guid>(nullable: false),
                     FoodId = table.Column<Guid>(nullable: false),

@@ -10,21 +10,15 @@ namespace Definux.Emeraude.Identity.Entities
     /// </summary>
     public class User : IdentityUser<Guid>, IUser
     {
-        /// <inheritdoc/>
-        public override Guid Id { get => base.Id; set => base.Id = value; }
-
         /// <summary>
         /// Name of the user.
         /// </summary>
         public string Name { get; set; }
 
-        /// <inheritdoc/>
-        public override string Email { get => base.Email; set => base.Email = value; }
-
         /// <summary>
         /// Registration date of the user.
         /// </summary>
-        public DateTime RegistrationDate { get; set; }
+        public DateTimeOffset RegistrationDate { get; set; }
 
         /// <summary>
         /// Property that indicates whether the user is locked out.
@@ -55,6 +49,6 @@ namespace Definux.Emeraude.Identity.Entities
         /// <summary>
         /// Refresh token expiration date.
         /// </summary>
-        public DateTime? RefreshTokenExpiration { get; set; }
+        public DateTimeOffset? RefreshTokenExpiration { get; set; }
     }
 }

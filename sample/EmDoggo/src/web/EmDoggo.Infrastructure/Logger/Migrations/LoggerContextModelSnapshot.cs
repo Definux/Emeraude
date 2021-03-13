@@ -38,8 +38,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Headers")
                         .HasColumnType("text");
@@ -77,8 +77,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("EmailAddress")
                         .HasColumnType("text");
@@ -107,8 +107,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Message")
                         .HasColumnType("text");
@@ -140,8 +140,8 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("FileExtension")
                         .HasColumnType("integer");

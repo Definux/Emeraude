@@ -15,7 +15,7 @@ namespace Definux.Emeraude.Domain.Logging
         /// <summary>
         /// Creation date of the logger entity.
         /// </summary>
-        DateTime CreatedOn { get; set; }
+        DateTimeOffset CreatedOn { get; set; }
 
         /// <summary>
         /// Creator id of the logger entity.
