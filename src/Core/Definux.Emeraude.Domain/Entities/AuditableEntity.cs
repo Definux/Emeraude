@@ -8,13 +8,13 @@ namespace Definux.Emeraude.Domain.Entities
     public abstract class AuditableEntity : Entity, IAuditableEntity
     {
         /// <inheritdoc/>
-        public DateTime CreatedOn { get; set; }
+        public DateTimeOffset CreatedOn { get; set; }
 
         /// <inheritdoc/>
         public string CreatedBy { get; set; }
 
         /// <inheritdoc/>
-        public DateTime UpdatedOn { get; set; }
+        public DateTimeOffset UpdatedOn { get; set; }
 
         /// <inheritdoc/>
         public string UpdatedBy { get; set; }

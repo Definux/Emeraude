@@ -14,7 +14,7 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
                     Action = table.Column<string>(nullable: true),
                     Controller = table.Column<string>(nullable: true),
@@ -37,7 +37,7 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
                     Receiver = table.Column<string>(nullable: true),
                     Subject = table.Column<string>(nullable: true),
@@ -56,7 +56,7 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
                     StackTrace = table.Column<string>(type: "text", nullable: true),
                     Source = table.Column<string>(nullable: true),
@@ -74,7 +74,7 @@ namespace EmDoggo.Infrastructure.Logger.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Path = table.Column<string>(nullable: true),

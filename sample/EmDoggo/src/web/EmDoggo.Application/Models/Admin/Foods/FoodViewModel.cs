@@ -24,5 +24,25 @@ namespace EmDoggo.Application.Models.Admin.Foods
         [DetailsField(2, typeof(DetailsFieldTextElement))]
         [FormInput(2, typeof(FormEnumDropdownElement))]
         public FoodManufacturer Manufacturer { get; set; }
+        
+        [TableColumn(3, typeof(TableDateTimeElement))]
+        [DetailsField(3, typeof(DetailsFieldDateElement))]
+        [FormInput(3, typeof(FormDateElement))]
+        public DateTimeOffset RequiredDateTimeOffset { get; set; }
+
+        [TableColumn(4, typeof(TableDateTimeElement))]
+        [DetailsField(4, typeof(DetailsFieldDateElement))]
+        [FormInput(4, typeof(FormDateElement))]
+        public DateTimeOffset? OptionalDateTimeOffset { get; set; }
+        
+        [TableColumn(5, typeof(TableDateTimeElement))]
+        [DetailsField(5, typeof(DetailsFieldDateElement))]
+        [FormInput(5, typeof(FormDateElement))]
+        public DateTime RequiredDateTime { get; set; }
+
+        [TableColumn(6, typeof(TableDateTimeElement))]
+        [DetailsField(6, typeof(DetailsFieldDateElement))]
+        [FormInput(6, typeof(FormDateElement))]
+        public DateTime? OptionalDateTime { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Definux.Emeraude.Domain.Logging
         public int Id { get; set; }
 
         /// <inheritdoc/>
-        public DateTime CreatedOn { get; set; }
+        public DateTimeOffset CreatedOn { get; set; }
 
         /// <inheritdoc/>
         public string CreatedBy { get; set; }

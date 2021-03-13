@@ -17,9 +17,13 @@ namespace Definux.Emeraude.Admin.UI.UIElements.Form.Implementations
         {
             DateTime? dateValue = null;
 
-            if (this.Value != null)
+            if (this.Value is DateTime dateTime)
             {
-                dateValue = Convert.ToDateTime(this.Value);
+                dateValue = dateTime;
+            }
+            else if (this.Value is DateTimeOffset offset)
+            {
+                dateValue = offset.DateTime;
             }
 
             this.HtmlBuilder = new DatePickerHtmlBuilder(

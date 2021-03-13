@@ -29,7 +29,7 @@ namespace Definux.Emeraude.Admin.Models
         /// <inheritdoc cref="User.RegistrationDate"/>
         [TableColumn(3, "Registration", typeof(TableDateTimeElement))]
         [DetailsField(3, "Registration", typeof(DetailsFieldDateTimeElement))]
-        public DateTime RegistrationDate { get; set; }
+        public DateTimeOffset RegistrationDate { get; set; }
 
         /// <summary>
         /// Flag that indicates whether the user is activate his/her two factor authentication.

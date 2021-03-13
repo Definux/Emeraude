@@ -15,7 +15,7 @@ namespace Definux.Emeraude.Admin.UI.ViewModels.Logging
         /// <summary>
         /// Date of creation of the log.
         /// </summary>
-        public DateTime CreatedOn { get; set; }
+        public DateTimeOffset CreatedOn { get; set; }
 
         /// <summary>
         /// Creator of the log.

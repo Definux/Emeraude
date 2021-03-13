@@ -28,9 +28,13 @@ namespace Definux.Emeraude.Admin.UI.UIElements
         {
             DateTime? sourceData = null;
 
-            if (this.DataSource != null)
+            if (this.DataSource is DateTime dateTime)
             {
-                sourceData = Convert.ToDateTime(this.DataSource);
+                sourceData = dateTime;
+            }
+            else if (this.DataSource is DateTimeOffset offset)
+            {
+                sourceData = offset.DateTime;
             }
 
             string htmlString = sourceData.HasValue ? sourceData.Value.ToString(this.dateTimeFormat) : string.Empty;

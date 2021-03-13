@@ -3,17 +3,15 @@ using System;
 using EmDoggo.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace EmDoggo.Infrastructure.Persistance.Migrations
+namespace EmDoggo.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(EntityContext))]
-    [Migration("20210205091600_AddDescriptionToShops")]
-    partial class AddDescriptionToShops
+    partial class EntityContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,11 +124,11 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                     b.Property<string>("RefreshToken")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("RefreshTokenExpiration")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset?>("RefreshTokenExpiration")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("RegistrationDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("RegistrationDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
@@ -274,6 +272,18 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                         .HasColumnType("character varying(128)")
                         .HasMaxLength(128);
 
+                    b.Property<DateTime?>("OptionalDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTimeOffset?>("OptionalDateTimeOffset")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("RequiredDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTimeOffset>("RequiredDateTimeOffset")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.ToTable("Foods");
@@ -329,8 +339,8 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("FoodId")
                         .HasColumnType("uuid");
@@ -341,8 +351,8 @@ namespace EmDoggo.Infrastructure.Persistance.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 

@@ -30,6 +30,6 @@ namespace Definux.Emeraude.Domain.Entities
         /// <summary>
         /// Registration date of the user.
         /// </summary>
-        DateTime RegistrationDate { get; set; }
+        DateTimeOffset RegistrationDate { get; set; }
     }
 }
