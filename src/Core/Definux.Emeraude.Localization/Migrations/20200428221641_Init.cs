@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Definux.Emeraude.Localization.Migrations
 {
+    /// <inheritdoc />
     public partial class Init : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -143,6 +145,7 @@ namespace Definux.Emeraude.Localization.Migrations
                 column: "translation_key_id");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

@@ -17,16 +17,19 @@ namespace Definux.Emeraude.Application.Persistence
         DbSet<TEntity> Set<TEntity>()
             where TEntity : class;
 
-        /// <inheritdoc cref="DbContext.SaveChanges"/>
+        /// <summary>
+        /// <inheritdoc cref="DbContext.SaveChanges()" />
+        /// </summary>
+        /// <returns></returns>
         int SaveChanges();
 
-        /// <inheritdoc cref="DbContext.SaveChanges"/>
+        /// <inheritdoc cref="DbContext.SaveChanges()"/>
         int SaveChanges(bool acceptAllChangesOnSuccess);
 
-        /// <inheritdoc cref="DbContext.SaveChangesAsync"/>
+        /// <inheritdoc cref="DbContext.SaveChangesAsync(bool,System.Threading.CancellationToken)"/>
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <inheritdoc cref="DbContext.SaveChangesAsync"/>
+        /// <inheritdoc cref="DbContext.SaveChangesAsync(System.Threading.CancellationToken)"/>
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -36,6 +36,7 @@ namespace Definux.Emeraude.Application.Requests.Identity.Commands.ChangePassword
             /// Initializes a new instance of the <see cref="ChangePasswordCommandHandler"/> class.
             /// </summary>
             /// <param name="userManager"></param>
+            /// <param name="logger"></param>
             public ChangePasswordCommandHandler(IUserManager userManager, IEmLogger logger)
             {
                 this.userManager = userManager;

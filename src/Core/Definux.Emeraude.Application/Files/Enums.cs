@@ -5,7 +5,14 @@
     /// </summary>
     public enum FileSystemItemType
     {
+        /// <summary>
+        /// File.
+        /// </summary>
         File = 1,
+
+        /// <summary>
+        /// Folder.
+        /// </summary>
         Folder = 2,
     }
 }

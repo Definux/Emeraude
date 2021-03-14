@@ -131,7 +131,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
                         if (requestResult.Result.RequiresTwoFactor)
                         {
                             await this.HttpContext.SignInAsync(IdentityConstants.TwoFactorUserIdScheme, this.StoreTwoFactorInfo(requestResult.User.Id, null));
-                            return this.RedirectToAction(nameof(this.LoginWith2fa));
+                            return this.RedirectToAction(nameof(this.LoginWith2Fa));
                         }
                         else if (requestResult.Result.IsLockedOut)
                         {
@@ -160,7 +160,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
         /// <returns></returns>
         [Route("/admin/login-2fa")]
         [HttpGet]
-        public async Task<IActionResult> LoginWith2fa()
+        public async Task<IActionResult> LoginWith2Fa()
         {
             if (this.User.Identity.IsAuthenticated)
             {
@@ -174,7 +174,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
                 return this.NotFound();
             }
 
-            AdminLoginWith2faViewModel model = new AdminLoginWith2faViewModel();
+            AdminLoginWith2FaViewModel model = new AdminLoginWith2FaViewModel();
 
             return this.View(model);
         }
@@ -188,7 +188,7 @@ namespace Definux.Emeraude.Admin.Controllers.Mvc
         [Route("/admin/login-2fa")]
         [ServiceFilter(typeof(VisibleReCaptchaValidateAttribute))]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LoginWith2fa(AdminLoginWith2faViewModel model)
+        public async Task<IActionResult> LoginWith2Fa(AdminLoginWith2FaViewModel model)
         {
             if (this.User.Identity.IsAuthenticated)
             {

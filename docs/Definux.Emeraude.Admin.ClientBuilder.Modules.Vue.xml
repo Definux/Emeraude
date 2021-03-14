@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Admin.ClientBuilder.Modules.Vue</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Abstractions.VueScaffoldModule">
+            <summary>
+            Abstract Vue module for generation of files supporting Vue applications.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Abstractions.VueScaffoldModule.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Abstractions.VueScaffoldModule"/> class.
+            </summary>
+            <param name="name"></param>
+            <param name="locked"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Extensions.ClientBuilderOptionsExtensions">
+            <summary>
+            Extensions for <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Options.ClientBuilderOptions"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Extensions.ClientBuilderOptionsExtensions.AddDefaultVueModules(Definux.Emeraude.Admin.ClientBuilder.Options.ClientBuilderOptions)">
+            <summary>
+            Add default Vue modules.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.Templates.ConstantsTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.VueConstantsModule">
+            <summary>
+            Vue constants module for generation constants values for transfer data from back-end to front-end.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.VueConstantsModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.VueConstantsModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.VueConstantsModule.DefineFiles">
+            <inheritdoc />
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Constants.VueConstantsModule.DefineFolders">
+            <inheritdoc />
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.Templates.ComponentTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.VueEmPagesModule">
+            <summary>
+            Vue EmPages module for generation of all pages components for created EmPages in Vue application.
+            The generation of this module is executing once in case when the page does not exist.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.VueEmPagesModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.VueEmPagesModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.VueEmPagesModule.DefineFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.EmPages.VueEmPagesModule.DefineFolders">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.Templates.RoutesTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.VueRoutesModule">
+            <summary>
+            Vue routes module for generation of all pages routes for router configuration in Vue application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.VueRoutesModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.VueRoutesModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.VueRoutesModule.DefineFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.Routes.VueRoutesModule.DefineFolders">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.Templates.StaticContentComponentTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.VueStaticContentModule">
+            <summary>
+            Vue static content module for generation of components that represent the static content entities from the localization context in Vue application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.VueStaticContentModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.VueStaticContentModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.VueStaticContentModule.DefineFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.StaticContent.VueStaticContentModule.DefineFolders">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.Templates.I18nConfigTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.VueTranslationsResourcesModule">
+            <summary>
+            Vue translation resources module for generation of all files (JSON) that contains the translations + their load i18n script in Vue application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.VueTranslationsResourcesModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.VueTranslationsResourcesModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.VueTranslationsResourcesModule.DefineFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.TranslationsResources.VueTranslationsResourcesModule.DefineFolders">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EndpointsTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.EnumsTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.Templates.TypesTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.VueWebApiModule">
+            <summary>
+            Vue web API module for generation of API endpoints as help functions and all supported classes and enums in Vue application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.VueWebApiModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.VueWebApiModule"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.VueWebApiModule.DefineFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Implementations.WebApi.VueWebApiModule.DefineFolders">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.Resources.vuejs">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders">
+            <summary>
+            Folder names from Vue modules.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.ClientApp">
+            <summary>
+            ClientApp folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Router">
+            <summary>
+            Router folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Pages">
+            <summary>
+            Pages folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Api">
+            <summary>
+            Api folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Locales">
+            <summary>
+            Locales folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Components">
+            <summary>
+            Components folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.StaticContent">
+            <summary>
+            StaticContent folder name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Admin.ClientBuilder.Modules.Vue.VueAppFolders.Shared">
+            <summary>
+            Shared folder name.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -23,6 +23,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
     <LangVersion>8</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

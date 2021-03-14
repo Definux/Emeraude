@@ -26,6 +26,7 @@ namespace Definux.Emeraude.Identity.Services
         /// </summary>
         /// <param name="userManager"></param>
         /// <param name="httpContextAccessor"></param>
+        /// <param name="context"></param>
         public UserManager(
             UserManager<User> userManager,
             IHttpContextAccessor httpContextAccessor,

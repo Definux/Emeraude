@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Client.EmPages</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2">
+            <summary>
+            EmPage parent class that initialize a ASP.NET Core MVC page related with Vue.js page with custom predefined initial state.
+            </summary>
+            <typeparam name="TViewModel">Type of the returning data transfer object (ViewModel).</typeparam>
+            <typeparam name="TRequest">Request that compute and return the ViewModel.</typeparam>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.InitialStateModel">
+            <inheritdoc cref="T:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1"/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.ViewModel">
+            <summary>
+            Data transfer object for pass strong-typed data to the initial state of the page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.InitialStateRequest">
+            <summary>
+            Request that compute and return the <see cref="P:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.ViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.Index">
+            <summary>
+            GET request that returns the <see cref="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.EmPageView(Definux.Emeraude.Client.EmPages.Models.InitialStateModel{`0})"/> with the page initial state.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.RequestInitialState">
+            <summary>
+            POST request for the page initial state without HTML rendering.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.BuildInitialStateModel">
+            <summary>
+            Method that contains the implementation of creation of initial state model. It is usefull if you want to pass some routing data to the page ViewModel request.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.CreateInitialStateModelAsync(MediatR.IRequest{`0})">
+            <summary>
+            Method that create the initial state model - the customized data + all generic data. Overriding is not recommended.
+            </summary>
+            <param name="dataQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.EmPageView(Definux.Emeraude.Client.EmPages.Models.InitialStateModel{`0})">
+            <summary>
+            Method that returns the action result of the EmPage. To work properly the existance of Views/Client/Shared/EmPages/Index.cshtml is a must.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.InitializeViewDataAsync(Definux.Emeraude.Client.EmPages.Models.InitialStateModel{`0})">
+            <summary>
+            This method initializes the key-value pair used as view data for the initial state after the page view model is computed but before the page sending action result to the view.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPage`2.InitializeMetaTagsAsync(Definux.Emeraude.Client.EmPages.Models.InitialStateModel{`0},System.Boolean)">
+            <summary>
+            This method initialize the meta tags properties definition for current initial state of the current page.
+            </summary>
+            <param name="model"></param>
+            <param name="disableDefaultDecoratedTags">Disable default decorated meta tags for the parent controller.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Abstractions.EmPageSitemapPattern">
+            <summary>
+            Abstract class that implements the <see cref="T:Definux.Seo.Models.PageSitemapPattern"/> for the purposes of EmPages.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Abstractions.EmPageSitemapPattern.#ctor(System.String,Definux.Emeraude.Application.Localization.ILanguageStore)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Abstractions.EmPageSitemapPattern"/> class.
+            </summary>
+            <param name="template"></param>
+            <param name="languageStore"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Abstractions.IEmPage">
+            <summary>
+            Definition of EmPage.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute">
+            <summary>
+            Defines language SEO friendly route based on language code (not default language).
+            Example for English Language with code 'en': '/items/1' map route '/en/items/1'.
+            Provides string variable 'languageCode' contains current request language code.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute.Template">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute.Order">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmLanguageRouteAttribute.Name">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Attributes.EmReadOnlyAttribute">
+            <summary>
+            Emeraude specific attribute that decorates the property to be read only.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute">
+            <summary>
+            Defines the route of current EmPage.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute"/> class.
+            Set up the page route.
+            </summary>
+            <param name="template"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute"/> class.
+            Set up the page as home page for the system.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute.Template">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute.Order">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Attributes.EmRouteAttribute.Name">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Conventions.EmPagesRouteConvention">
+            <summary>
+            An implementation of <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.IApplicationModelConvention"/> for configure and validate EmPages routings.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Conventions.EmPagesRouteConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.EmPagesConstants">
+            <summary>
+            Constants used into EmPages context.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Client.EmPages.EmPagesConstants.PageMetaTagTitleKey">
+            <summary>
+            Default page meta title key.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Client.EmPages.EmPagesConstants.PageMetaTagDescriptionKey">
+            <summary>
+            Default page meta description key.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Extensions.ServiceCollectionExtensions.RegisterEmPages(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register EmPages required services.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Models.IEmViewModel">
+            <summary>
+            Simple definition for EmPage view model.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Models.IInitialState">
+            <summary>
+            Definition of EmPage initial state.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1">
+            <summary>
+            Model for definition of data transfer object container from the back-end to the front-end initial state.
+            </summary>
+            <typeparam name="TViewModel">Data transfer object that contains the custom strong-typed data for the page.</typeparam>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.RouteName">
+            <summary>
+            Name of the accessed route. It is recommended to match with the name of the page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.User">
+            <summary>
+            Identity user extracted from the request. For more information see <see cref="T:Definux.Emeraude.Client.EmPages.Models.RequestUser"/>.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.LanguageCode">
+            <summary>
+            Code of the language extracted from the accessed route.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.LanguageId">
+            <summary>
+            Id of the language extracted from the accessed route.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.StateString">
+            <summary>
+            Random string (GUID format) that represents the current request.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.ViewModel">
+            <summary>
+            Data transfer object that contains the custom strong-typed data for the page. For non strong-typed data see <see cref="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.ViewData"/>.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.ViewData">
+            <summary>
+            Data transfer object that contains the custom non strong-typed data for the page. For strong-typed data see <see cref="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.ViewModel"/>.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.MetaTags">
+            <summary>
+            Defines an collection of properties for HTML meta tags for better SEO.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.AddViewDataItem(System.String,System.Object)">
+            <summary>
+            Method that add a new key/value pair to the <see cref="P:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1.ViewData"/>.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1">
+            <inheritdoc cref="T:Definux.Emeraude.Client.EmPages.Models.IInitialStateModel`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1"/> class.
+            </summary>
+            <param name="routeName"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.RouteName">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.StateString">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.User">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.LanguageCode">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.LanguageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.ViewData">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.MetaTags">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Models.InitialStateModel`1.AddViewDataItem(System.String,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Models.RequestUser">
+            <summary>
+            Encapsulated class that contains information about the identity user for the current request.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.RequestUser.IsAuthenticated">
+            <summary>
+            Flag that indicates whether user is authenticated or not.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.RequestUser.Name">
+            <summary>
+            Full name of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.RequestUser.Email">
+            <summary>
+            Email address of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Models.RequestUser.Roles">
+            <summary>
+            Array with the roles of the user.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Renderer.EmPageRenderer">
+            <summary>
+            Performs server-side Vue app prerendering by invoking code in Node.js.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Renderer.EmPageRenderer.RenderToString(System.String,Microsoft.AspNetCore.NodeServices.INodeServices,System.Threading.CancellationToken,System.String,Microsoft.AspNetCore.Http.HttpContext,System.Object,System.Int32)">
+            <summary>
+            Performs server-side EmPage prerendering by invoking code in Node.js.
+            </summary>
+            <param name="applicationBasePath"></param>
+            <param name="nodeServices"></param>
+            <param name="applicationStoppingToken"></param>
+            <param name="serverBundlePath"></param>
+            <param name="httpContext"></param>
+            <param name="customDataParameter"></param>
+            <param name="timeoutMilliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper">
+            <summary>
+            EmPage Vue server-side rendering tag helper which prerender the Vue application by the server bundle and initial state model.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.#ctor(System.IServiceProvider,Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper"/> class.
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.ActivateEmeraude">
+            <summary>
+            Flag that indicates Emeraude app initialization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.ServerBundle">
+            <summary>
+            Specifies the path to the built application server bundle.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.InitialStateViewModel">
+            <summary>
+            The initial state model parameter that will be applied into the application store state.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.TimeoutMillisecondsParameter">
+            <summary>
+            The maximum duration to wait for prerendering to complete.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.ViewContext">
+            <summary>
+            The <see cref="P:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.ViewContext"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Renderer.EmPageRendererTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult">
+            <summary>
+            Describes the prerendering result returned by JavaScript code.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.Globals">
+            <summary>
+            If set, specifies JSON-serializable data that should be added as a set of global JavaScript variables in the document.
+            This can be used to transfer arbitrary data from server-side prerendering code to client-side code (for example, to
+            transfer the state of a Redux store).
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.Html">
+            <summary>
+            The HTML generated by the prerendering logic.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.RedirectUrl">
+            <summary>
+            If set, specifies that instead of rendering HTML, the response should be an HTTP redirection to this URL.
+            This can be used if the prerendering code determines that the requested URL would lead to a redirection according
+            to the SPA's routing configuration.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.StatusCode">
+            <summary>
+            If set, specifies the HTTP status code that should be sent back with the server response.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.CreateGlobalsAssignmentScript">
+            <summary>
+            Constructs a block of JavaScript code that assigns data from the
+            <see cref="P:Definux.Emeraude.Client.EmPages.Renderer.RenderToStringResult.Globals"/> property to the global namespace.
+            </summary>
+            <returns>A block of JavaScript code.</returns>
+        </member>
+    </members>
+</doc>

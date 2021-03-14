@@ -19,6 +19,8 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

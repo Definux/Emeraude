@@ -1,0 +1,519 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2">
+            <summary>
+            Abstract class that represent helper for create object builder for creation domein entity with builder pattern.
+            </summary>
+            <typeparam name="TEntity">Target entity.</typeparam>
+            <typeparam name="TEntityBuilder">Target entity builder.</typeparam>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2.Entity">
+            <summary>
+            Target entity.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2.Init">
+            <summary>
+            Initialization step for the builder.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ObjectBuilder`2.Build">
+            <summary>
+            Finalize method for the builder that build and return the target entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Abstractions.ValueObject">
+            <summary>
+            Abstract class for domain value object definition.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ValueObject.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ValueObject.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ValueObject.EqualOperator(Definux.Emeraude.Domain.Abstractions.ValueObject,Definux.Emeraude.Domain.Abstractions.ValueObject)">
+            <summary>
+            Check for equality between two value objects.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ValueObject.NotEqualOperator(Definux.Emeraude.Domain.Abstractions.ValueObject,Definux.Emeraude.Domain.Abstractions.ValueObject)">
+            <summary>
+            Checo for lack of equality between two value objects.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Abstractions.ValueObject.GetEqualityComponents">
+            <summary>
+            Method that returns equality components of the value object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.AuditableEntity">
+            <summary>
+            Abstract class that represent domain entity with additional auditable information.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.AuditableEntity.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.AuditableEntity.CreatedBy">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.AuditableEntity.UpdatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.AuditableEntity.UpdatedBy">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.Entity">
+            <summary>
+            Abstract class that represent the domain entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.Entity.Id">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.IAuditableEntity">
+            <summary>
+            Interface that represent domain entity with additional auditable information.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IAuditableEntity.CreatedOn">
+            <summary>
+            Date of creation of the entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IAuditableEntity.CreatedBy">
+            <summary>
+            Identification of the user that create the entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IAuditableEntity.UpdatedOn">
+            <summary>
+            Date of last modification of the entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IAuditableEntity.UpdatedBy">
+            <summary>
+            Identification of the user that last modified the entity.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.IEntity">
+            <summary>
+            Interface that represent the domain entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IEntity.Id">
+            <summary>
+            Identification of the entity.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.IEntityWithImage">
+            <summary>
+            Interface that represent domain entity with additional image.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IEntityWithImage.ImageUrl">
+            <summary>
+            Url of the image of the entity.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Entities.IUser">
+            <summary>
+            Interface that represent user of the application.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IUser.Name">
+            <summary>
+            Name of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IUser.PhoneNumber">
+            <summary>
+            Phone number of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IUser.Email">
+            <summary>
+            Email address of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IUser.AvatarUrl">
+            <summary>
+            Avatar URL of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Entities.IUser.RegistrationDate">
+            <summary>
+            Registration date of the user.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Localization.ContentKey">
+            <summary>
+            Key of the static content.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Localization.ContentKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Domain.Localization.ContentKey"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.ContentKey.Id">
+            <summary>
+            Id of the content key.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.ContentKey.Key">
+            <summary>
+            Key of the content key.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.ContentKey.StaticContentList">
+            <summary>
+            List of all static content items which are using the key.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Localization.Language">
+            <summary>
+            Class that represent language definition into the system.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Localization.Language.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Domain.Localization.Language"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.Id">
+            <summary>
+            Id of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.Code">
+            <summary>
+            Language short code.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.Name">
+            <summary>
+            System name of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.NativeName">
+            <summary>
+            Native name of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.Translations">
+            <summary>
+            List of all translations for the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.StaticContentList">
+            <summary>
+            List of all static content items for the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.Language.IsDefault">
+            <summary>
+            Flag that indicates whether the language is set as default for the application.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Localization.StaticContent">
+            <summary>
+            Static content for a key and language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.Id">
+            <summary>
+            Id of the static content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.LanguageId">
+            <summary>
+            Id of the language of the static content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.Language">
+            <summary>
+            Entity of the language of the static content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.ContentKeyId">
+            <summary>
+            Id of the key of the static content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.ContentKey">
+            <summary>
+            Entity of the key of the static content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.StaticContent.Content">
+            <summary>
+            Static content text.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Localization.TranslationKey">
+            <summary>
+            Key of the translation.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Domain.Localization.TranslationKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Domain.Localization.TranslationKey"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationKey.Id">
+            <summary>
+            Id of the translation key.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationKey.Key">
+            <summary>
+            Key of the translation key.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationKey.Translations">
+            <summary>
+            List of all translations which are using the key.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Localization.TranslationValue">
+            <summary>
+            Translation text based on translation key and language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.Id">
+            <summary>
+            Id of the translation.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.LanguageId">
+            <summary>
+            Id of the language of the translation.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.Language">
+            <summary>
+            Entity of the language of the translation.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.TranslationKeyId">
+            <summary>
+            Id of the key of the translation.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.TranslationKey">
+            <summary>
+            Entity of the key of the translation.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Localization.TranslationValue.Value">
+            <summary>
+            Translation value.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.ActivityLog">
+            <summary>
+            Log that store user activity for the current request.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Action">
+            <summary>
+            Name of the requested controller action.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Controller">
+            <summary>
+            Name of the requested controller.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Area">
+            <summary>
+            Name of the requested controller area.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Parameters">
+            <summary>
+            List represent as a string for all request parameters.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Headers">
+            <summary>
+            List represent as a string for all request headers.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Route">
+            <summary>
+            Current request route.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.Method">
+            <summary>
+            Current request HTTP method.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.TraceId">
+            <summary>
+            Unique string that unify each user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.UserAgent">
+            <summary>
+            Current request user agent.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.IsFromMobileDevice">
+            <summary>
+            Flag that indicates whether the request is made from mobile device.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ActivityLog.IsAuthenticatedUser">
+            <summary>
+            Flag that indicates whether the request is made from authenticated user.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.EmailLog">
+            <summary>
+            Log that represent sending email try from the system.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.EmailLog.Receiver">
+            <summary>
+            Receiver of the email.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.EmailLog.Subject">
+            <summary>
+            Subject of the email.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.EmailLog.EmailAddress">
+            <summary>
+            Email address.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.EmailLog.Body">
+            <summary>
+            Body of the email.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.EmailLog.Sent">
+            <summary>
+            Flag that indicates whether email is sent or not.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.ErrorLog">
+            <summary>
+            Log that represent errors and exception from the system.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ErrorLog.StackTrace">
+            <summary>
+            Stack trace of the exception.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ErrorLog.Source">
+            <summary>
+            Error source.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ErrorLog.Message">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ErrorLog.Method">
+            <summary>
+            Name of the from where the error comes.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.ILoggerEntity">
+            <summary>
+            Interface log entity, parent for all logs into the system.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ILoggerEntity.Id">
+            <summary>
+            Id of the logger entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ILoggerEntity.CreatedOn">
+            <summary>
+            Creation date of the logger entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.ILoggerEntity.CreatedBy">
+            <summary>
+            Creator id of the logger entity.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.LoggerEntity">
+            <summary>
+            Abstract log entity, parent for all logs into the system.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.LoggerEntity.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.LoggerEntity.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.LoggerEntity.CreatedBy">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Domain.Logging.TempFileLog">
+            <summary>
+            Log that represent uploaded files - mainly the temp files.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.Name">
+            <summary>
+            Name of the file (without extension).
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.NameWithExtension">
+            <summary>
+            Name of the file with its extension.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.Path">
+            <summary>
+            Relative path of the file.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.FileType">
+            <summary>
+            Type of the file.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.FileExtension">
+            <summary>
+            Extension type of the file.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Domain.Logging.TempFileLog.Applied">
+            <summary>
+            Flag that indicates whether the file is applied or it is just a temp file and it is not already used.
+            </summary>
+        </member>
+    </members>
+</doc>

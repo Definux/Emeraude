@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Persistence</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Persistence.DefaultDataTypesLengths">
+            <summary>
+            Default data types.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.SingleName">
+            <summary>
+            Single name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.FullName">
+            <summary>
+            Full name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Email">
+            <summary>
+            Email address.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Phone">
+            <summary>
+            Phone number.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Fax">
+            <summary>
+            Fax.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.City">
+            <summary>
+            City.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Address">
+            <summary>
+            Address.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.CompanyName">
+            <summary>
+            Company name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.ReferenceNumber">
+            <summary>
+            Reference number.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.Website">
+            <summary>
+            Website.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.GroupName">
+            <summary>
+            Group name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Persistence.DefaultDataTypesLengths.AddressNumber">
+            <summary>
+            Address number.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.EmContext`1">
+            <summary>
+            Main abstract context of Emeraude application for your database context.
+            </summary>
+            <typeparam name="TContext">Your database context.</typeparam>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{`0},Microsoft.AspNetCore.Http.IHttpContextAccessor,System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Persistence.EmContext`1"/> class.
+            </summary>
+            <param name="options"></param>
+            <param name="httpAccessor"></param>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.EmContext`1.ServiceProvider">
+            <inheritdoc cref="T:System.IServiceProvider"/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.SaveChanges">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.SaveChanges(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.GetContextType">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.ConfigureEntitiesIdentifications(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configure all entities identifications.
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.EmContext`1.UpdateAuditableEntities">
+            <summary>
+            Method that automatically update all dates and users of all tracked auditable entities.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.Extensions.PropertyBuilderExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Extensions.PropertyBuilderExtensions.HasEnumArrayConversion``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0[]})">
+            <summary>
+            Make the conversion between enum array and string.
+            </summary>
+            <typeparam name="TEnum">Enum with string name and value in Int32.</typeparam>
+            <param name="propertyBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Extensions.PropertyBuilderExtensions.HasObjectArrayToJsonConversion``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0[]})">
+            <summary>
+            Make the conversion between object array and string.
+            </summary>
+            <typeparam name="TType">Object which is easy for serialization.</typeparam>
+            <param name="propertyBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Extensions.ServiceCollectionExtensions.ConfigureDatabases``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Definux.Emeraude.Configuration.Options.EmOptions)">
+            <summary>
+            Configures Emeraude database.
+            </summary>
+            <typeparam name="TContextInterface">Interface of the application database context.</typeparam>
+            <typeparam name="TContextImplementation">Implementation of the application database context.</typeparam>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Extensions.ServiceCollectionExtensions.AddDatabaseInitializer``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers a database initializer.
+            </summary>
+            <typeparam name="TInitializerService">Interface of the target database initializer.</typeparam>
+            <typeparam name="TInitializerImplementation">Implementation class of the target initializer.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.Seed.ApplicationDatabaseInitializer">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Persistence.IApplicationDatabaseInitializer"/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.ApplicationDatabaseInitializer.#ctor(Definux.Emeraude.Application.Persistence.IEmContext,Definux.Emeraude.Application.Identity.IUserManager,Definux.Emeraude.Application.Identity.IRoleManager,Microsoft.Extensions.Options.IOptions{Definux.Emeraude.Configuration.Options.EmOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Persistence.Seed.ApplicationDatabaseInitializer"/> class.
+            </summary>
+            <param name="context"></param>
+            <param name="userManager"></param>
+            <param name="roleManager"></param>
+            <param name="optionsAccessor"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.ApplicationDatabaseInitializer.SeedAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1">
+            <summary>
+            Implementation of <see cref="T:Definux.Emeraude.Interfaces.Services.IDatabaseInitializer"/> for the specified <see cref="T:Definux.Emeraude.Application.Persistence.IEmContext"/>.
+            </summary>
+            <typeparam name="TContext"><see cref="T:Definux.Emeraude.Application.Persistence.IEmContext"/>.</typeparam>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,`0,Definux.Emeraude.Application.Files.ISystemFilesService,Definux.Emeraude.Application.Files.IUploadService,Definux.Emeraude.Application.Files.IRootsService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1"/> class.
+            </summary>
+            <param name="hostingEnvironment"></param>
+            <param name="entityContext"></param>
+            <param name="systemFilesService"></param>
+            <param name="uploadService"></param>
+            <param name="rootsService"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.DataFolderPath">
+            <summary>
+            Path of the folder that contains all data files used for data seed.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.HostingEnvironment">
+            <inheritdoc cref="T:Microsoft.Extensions.Hosting.IHostEnvironment"/>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.EntityContext">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Persistence.IEmContext"/>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.SystemFilesService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Files.ISystemFilesService"/>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.UploadService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Files.IUploadService"/>
+        </member>
+        <member name="P:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.RootsService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Files.IRootsService"/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.DatabaseInitializer`1.SeedAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Persistence.Seed.DatabaseInitializerManager">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Persistence.IDatabaseInitializerManager"/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.DatabaseInitializerManager.#ctor(System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Persistence.Seed.DatabaseInitializerManager"/> class.
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.DatabaseInitializerManager.LoadDatabaseInitializers(System.Type[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Persistence.Seed.DatabaseInitializerManager.SeedAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Data.AssemblyInfo">
+            <summary>
+            Assembly info provider.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Data.AssemblyInfo.GetAssembly">
+            <summary>
+            Gets execution assembly.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

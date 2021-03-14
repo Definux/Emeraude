@@ -14,8 +14,6 @@ namespace Definux.Emeraude.Client.UI.TagHelpers
         /// Initializes a new instance of the <see cref="StaticContentTagHelper"/> class.
         /// </summary>
         /// <param name="localizer"></param>
-        /// <param name="localizationContext"></param>
-        /// <param name="currentLanguageProvider"></param>
         public StaticContentTagHelper(ILocalizer localizer)
             : base(localizer)
         {

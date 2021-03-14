@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Logger</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Logger.Configuration.ActivityLogConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Configuration.ActivityLogConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Logging.ActivityLog})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Configuration.EmailLogConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Configuration.EmailLogConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Logging.EmailLog})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Configuration.ErrorLogConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Configuration.ErrorLogConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Logging.ErrorLog})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Configuration.LoggerEntityConfigurationBuilder">
+            <summary>
+            Extensions for <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Configuration.LoggerEntityConfigurationBuilder.ConfigureLoggerEntity``1(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{``0})">
+            <summary>
+            Configure abstract logger entity properties.
+            </summary>
+            <typeparam name="TEntity">Target entity.</typeparam>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Configuration.TempFileLogConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Configuration.TempFileLogConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Logging.TempFileLog})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Extensions.ServiceCollectionExtensions.RegisterEmeraudeLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Definux.Emeraude.Configuration.Options.EmOptions)">
+            <summary>
+            Register Emeraude logger feature elements and services.
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.Logger">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Logger.IEmLogger"/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.#ctor(Definux.Emeraude.Logger.LoggerContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Logger.Logger"/> class.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.LogActivity(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.LogErrorAsync(System.Exception,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.LogError(System.Exception,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.LogEmailAsync(System.String,System.String,System.String,System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.Logger.LogErrorWithoutAnException(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.LoggerContext">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Definux.Emeraude.Logger.LoggerContext},Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Options.IOptions{Definux.Emeraude.Configuration.Options.EmOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Logger.LoggerContext"/> class.
+            </summary>
+            <param name="options"></param>
+            <param name="httpContextAccessor"></param>
+            <param name="optionsAccessor"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Logger.LoggerContext.ActivityLogs">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Logger.LoggerContext.ErrorLogs">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Logger.LoggerContext.TempFileLogs">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Logger.LoggerContext.EmailLogs">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.SaveChanges">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.SaveChanges(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.SaveChangesAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.LoggerContext.UpdateAuditableEntities">
+            <summary>
+            Method that automatically update all dates and users of all tracked entities.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Logger.AssemblyInfo">
+            <summary>
+            Assembly info provider.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Logger.AssemblyInfo.GetAssembly">
+            <summary>
+            Gets execution assembly.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

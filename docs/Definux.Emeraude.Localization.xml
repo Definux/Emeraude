@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Localization</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute">
+            <summary>
+            Defines language SEO friendly route based on language code (not default language).
+            Example for English Language with code 'en': '/items/1' map route '/en/items/1'.
+            Provides string variable 'languageCode' contains current request language code.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute"/> class.
+            </summary>
+            <param name="template"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute.Template">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute.Order">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Locales.Attributes.LanguageRouteAttribute.Name">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Locales.Constraints.LanguageRouteConstraint">
+            <summary>
+            Implementation of <see cref="T:Microsoft.AspNetCore.Routing.IRouteConstraint"/> for language code constraint that validate the request language code.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Locales.Constraints.LanguageRouteConstraint.LanguageValueKey">
+            <summary>
+            Language value property that is applied to the route parameters.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Locales.Constraints.LanguageRouteConstraint.LanguageConstraintKey">
+            <summary>
+            Short name of the language constraint.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Locales.Constraints.LanguageRouteConstraint.Match(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Routing.IRouter,System.String,Microsoft.AspNetCore.Routing.RouteValueDictionary,Microsoft.AspNetCore.Routing.RouteDirection)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Configuration.ContentKeyConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Configuration.ContentKeyConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Localization.ContentKey})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Configuration.LanguageConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Configuration.LanguageConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Localization.Language})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Configuration.StaticContentConfiguration">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Configuration.StaticContentConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Localization.StaticContent})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Configuration.TranslationKeyConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Configuration.TranslationKeyConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Localization.TranslationKey})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Configuration.TranslationValueConfiguration">
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Configuration.TranslationValueConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Definux.Emeraude.Domain.Localization.TranslationValue})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Extensions.ControllerExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.AspNetCore.Mvc.Controller"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Extensions.ControllerExtensions.GetRouteWithAppliedLanguage(Microsoft.AspNetCore.Mvc.Controller,System.String,Definux.Emeraude.Domain.Localization.Language)">
+            <summary>
+            Gets route with applied language code on the beginning.
+            </summary>
+            <param name="controller"></param>
+            <param name="route"></param>
+            <param name="language"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Extensions.HttpContextExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Extensions.HttpContextExtensions.GetLanguageCode(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Get language code from current instance of <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>.
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Extensions.ServiceCollectionExtensions.RegisterEmeraudeLocalization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Definux.Emeraude.Configuration.Options.EmOptions)">
+            <summary>
+            Register required services for Emeraude localization.
+            </summary>
+            <param name="services"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Extensions.StringExtensions">
+            <summary>
+            Extensions for strings.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Extensions.StringExtensions.GetLanguageCodeFromUrl(System.String)">
+            <summary>
+            Extract language code from specified URL.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.LocalizationContext">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Localization.ILocalizationContext"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.LocalizationContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Definux.Emeraude.Localization.LocalizationContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Localization.LocalizationContext"/> class.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.LocalizationContext.Languages">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.LocalizationContext.Keys">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.LocalizationContext.Values">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.LocalizationContext.ContentKeys">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.LocalizationContext.StaticContent">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.LocalizationContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Migrations.Init">
+            <inheritdoc />
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Definux.Emeraude.Localization.AssemblyInfo">
+            <summary>
+            Assembly info provider.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.AssemblyInfo.GetAssembly">
+            <summary>
+            Gets execution assembly.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Services.CurrentLanguageProvider">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Localization.ICurrentLanguageProvider"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.CurrentLanguageProvider.#ctor(Definux.Emeraude.Application.Localization.ILocalizationContext,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Localization.Services.CurrentLanguageProvider"/> class.
+            </summary>
+            <param name="context"></param>
+            <param name="httpAccessor"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.CurrentLanguageProvider.GetCurrentLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.CurrentLanguageProvider.GetCurrentLanguageAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Services.LanguageStore">
+            <summary>
+            Storage implementation for all localization data - languages, translations.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.#ctor(Definux.Emeraude.Application.Localization.ILocalizationContext,Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Localization.Services.LanguageStore"/> class.
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetAllLanguageCodes">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetAllLanguageCodesAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetDefaultLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetDefaultLanguageAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetTranslationsKeys">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetLanguages">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetLanguagesAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.LanguageStore.GetLanguageTranslationDictionary(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Localization.Services.Localizer">
+            <inheritdoc cref="T:Definux.Emeraude.Interfaces.Services.ILocalizer"/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.#ctor(Definux.Emeraude.Application.Localization.ILocalizationContext,Definux.Emeraude.Application.Logger.IEmLogger,Definux.Emeraude.Application.Localization.ICurrentLanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Localization.Services.Localizer"/> class.
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+            <param name="currentLanguageProvider"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Localization.Services.Localizer.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.GetStaticContent(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.GetStaticContent(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.GetStaticContentAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.GetStaticContentAsync(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.TranslateKey(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.TranslateKey(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.TranslateKeyAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Localization.Services.Localizer.TranslateKeyAsync(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

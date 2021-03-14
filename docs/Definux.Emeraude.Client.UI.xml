@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Client.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Client.UI.ClientUIAssemblyPart">
+            <summary>
+            Static class that provides access to the Client UI asembly information.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ClientUIAssemblyPart.Assembly">
+            <inheritdoc cref="T:System.Reflection.Assembly"/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ClientUIAssemblyPart.AssemblyPart">
+            <inheritdoc cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.CompiledRazorAssemblyPart"/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.ClientUIConfigureOptions">
+            <summary>
+            Client UI options that configure the static files loaded in the assembly.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.ClientUIConfigureOptions.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.UI.ClientUIConfigureOptions"/> class.
+            </summary>
+            <param name="environment"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.Extensions.HtmlHelperExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.HtmlHelperExtensions.HasNonModelError(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper)">
+            <summary>
+            Check for existance of model state errors related with no specific property.
+            </summary>
+            <param name="htmlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.HtmlHelperExtensions.NonModelError(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper)">
+            <summary>
+            Gives the first model state error related with no specific property.
+            </summary>
+            <param name="htmlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.ServiceCollectionExtensions.ConfigureClientUI(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Client UI.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.AspNetCore.Mvc.IUrlHelper"/>.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.AuthenticationControllerName">
+            <summary>
+            Client authentication controller name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.ReturnUrlKey">
+            <summary>
+            Return url query param name.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.GetAuthenticationControllerName(Microsoft.AspNetCore.Mvc.IUrlHelper)">
+            <summary>
+            Get the client authentication controller name.
+            </summary>
+            <param name="urlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.LoginAction(Microsoft.AspNetCore.Mvc.IUrlHelper,Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary)">
+            <summary>
+            Generates login action URL.
+            </summary>
+            <param name="urlHelper"></param>
+            <param name="viewData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.ExternalLoginAction(Microsoft.AspNetCore.Mvc.IUrlHelper,Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary)">
+            <summary>
+            Generates external login action URL.
+            </summary>
+            <param name="urlHelper"></param>
+            <param name="viewData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.RegisterAction(Microsoft.AspNetCore.Mvc.IUrlHelper)">
+            <summary>
+            Generates register action URL.
+            </summary>
+            <param name="urlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.ForgotPasswordAction(Microsoft.AspNetCore.Mvc.IUrlHelper)">
+            <summary>
+            Generates forgot password action URL.
+            </summary>
+            <param name="urlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.ResetPasswordAction(Microsoft.AspNetCore.Mvc.IUrlHelper)">
+            <summary>
+            Generates reset password action URL.
+            </summary>
+            <param name="urlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.IndexAction(Microsoft.AspNetCore.Mvc.IUrlHelper)">
+            <summary>
+            Generates index action URL (Index action from HomeController).
+            </summary>
+            <param name="urlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.UrlHelperExtensions.LanguageAction(Microsoft.AspNetCore.Mvc.IUrlHelper,System.String,System.String,System.Object)">
+            <summary>
+            Get transformed route with language code of the current language in case when the current language is not the default one.
+            </summary>
+            <param name="url"></param>
+            <param name="action"></param>
+            <param name="controller"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.Extensions.ViewDataExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Extensions.ViewDataExtensions.SetTitle(Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary,System.String)">
+            <summary>
+            Set title to the ViewData.
+            </summary>
+            <param name="viewData"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.Helpers.PredefinedViewMessageModel">
+            <summary>
+            Model used for notification message on predefined views.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.Helpers.PredefinedViewMessageModel.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.UI.Helpers.PredefinedViewMessageModel"/> class.
+            </summary>
+            <param name="targetView"></param>
+            <param name="documentationLink"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.Helpers.PredefinedViewMessageModel.TargetView">
+            <summary>
+            Name of the view.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.Helpers.PredefinedViewMessageModel.DocumentationLink">
+            <summary>
+            Link for documentation of current view.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.TagHelpers.StaticContentTagHelper">
+            <summary>
+            Tag helper that translate a static content key (placed in the content of the tag helper) based on the language extracted from the route.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.StaticContentTagHelper.#ctor(Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.UI.TagHelpers.StaticContentTagHelper"/> class.
+            </summary>
+            <param name="localizer"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.StaticContentTagHelper.ProcessOutput(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper">
+            <summary>
+            Tag helper that translate a translation key (placed in the content of the tag helper) based on the language extracted from the route.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.#ctor(Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper"/> class.
+            </summary>
+            <param name="localizer"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.ViewContext">
+            <inheritdoc cref="T:Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.Element">
+            <summary>
+            Element used for tag helper. Default element is span.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.StripHtml">
+            <summary>
+            Flag which true value remove all HTML tags from the tag helper content.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.Arguments">
+            <summary>
+            Arguments used for the placeholders in the translation. Usage args-param="parameter".
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.ArgumentsDelimiterStart">
+            <summary>
+            Delimiter start for arguments in the content - default value is '[['.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.ArgumentsDelimiterEnd">
+            <summary>
+            Delimiter end for arguments in the content - default value is ']]'.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.Localizer">
+            <inheritdoc cref="T:Definux.Emeraude.Interfaces.Services.ILocalizer"/>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.ProcessOutput(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <summary>
+            Processing method for the tag helper.
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.StripHtmlTags(System.String)">
+            <summary>
+            Remove HTML tags from the input.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Client.UI.TagHelpers.TranslationTagHelper.ApplyArguments(System.String)">
+            <summary>
+            Apply arguments into the value.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Client.UI.ViewModels.ExecutionResult.IndexViewModel">
+            <summary>
+            View model for the execution result view.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ViewModels.ExecutionResult.IndexViewModel.Title">
+            <summary>
+            Title of the page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ViewModels.ExecutionResult.IndexViewModel.Message">
+            <summary>
+            Message on the page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ViewModels.ExecutionResult.IndexViewModel.Succeeded">
+            <summary>
+            Status of the result.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Client.UI.ViewModels.ExecutionResult.IndexViewModel.Reference">
+            <summary>
+            Execution reference.
+            </summary>
+        </member>
+    </members>
+</doc>

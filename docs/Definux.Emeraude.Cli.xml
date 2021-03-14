@@ -1,0 +1,1157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Cli</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Cli.ActionProvider">
+            <summary>
+            Command factory provider that contains and triggers the command execution.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.ActionProvider.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Cli.ActionProvider"/> class.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.ActionProvider.Execute">
+            <summary>
+            Parse and executes the inputed command.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.CliConfig">
+            <summary>
+            Implementation of CLI configuration.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.CliConfig.FileName">
+            <summary>
+            Name of the Emeraude CLI configuration.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.CliConfig.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Cli.CliConfig"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.CliConfig.Base">
+            <inheritdoc cref="T:Definux.Emeraude.Cli.CliConfig.BaseConfiguration"/>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.CliConfig.BaseConfiguration">
+            <summary>
+            Configuration base section.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.CliConfig.BaseConfiguration.ProjectName">
+            <summary>
+            Name of the project.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Command">
+            <summary>
+            Abstract implementation of CLI command factory.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Command.CliConfig">
+            <summary>
+            <see cref="T:Definux.Emeraude.Cli.CliConfig"/>.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Command.CliConfigDirectory">
+            <summary>
+            Directory where the CLI configuration is placed.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Command.Execute(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Executes the command generation.
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Command.LoadCliConfig(System.String)">
+            <summary>
+            Loads and parse the CLI configuration file.
+            </summary>
+            <param name="configurationDirectory"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.CommandParameters">
+            <summary>
+            List of all commands parameters aliases.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandParameters.Name">
+            <summary>
+            Alias for 'Name'.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandParameters.ConfigurationDirectory">
+            <summary>
+            Alias for 'ConfigurationDirectory'.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.CommandsNames">
+            <summary>
+            Commands names provider class.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandsNames.Create">
+            <summary>
+            Name of the 'Create' command.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandsNames.Page">
+            <summary>
+            Name of the 'Page' command.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandsNames.Request">
+            <summary>
+            Name of the 'Request' command.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandsNames.Help">
+            <summary>
+            Name of the 'Help' command.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.Cli.Commands.CommandsNames.CommandList">
+            <summary>
+            List of all commands names.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.ConsoleCommand">
+            <summary>
+            Mapping class that parse the command string.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.ConsoleCommand.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Cli.Commands.ConsoleCommand"/> class.
+            </summary>
+            <param name="commandArgs"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.ConsoleCommand.Command">
+            <summary>
+            Command string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.ConsoleCommand.Parameters">
+            <summary>
+            Parameters of the command.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.ConsoleCommand.IsValid">
+            <summary>
+            Indicates whether the command is valid or not.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.ConsoleCommand.GetParameter(System.String)">
+            <summary>
+            Get command parameter by name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Create.CreateCommand">
+            <summary>
+            Command for creating the startup project.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Create.CreateCommand.Execute(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.PageCommand">
+            <summary>
+            Command for creating a new EmPage.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.PageCommand.Execute(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.InitialStateQueryTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.PageTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Page.Templates.ViewModelTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.RequestCommand">
+            <summary>
+            Command for creating a new request (query or comment).
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.RequestCommand.Execute(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.CommandValidatorTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.QueryTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.RequestTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Commands.Implementations.Request.Templates.ResultTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Commands.TemplateRenderer">
+            <summary>
+            Template renderer for T4 templates.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Commands.TemplateRenderer.RenderTemplate(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Render T4 template by its assembly type.
+            </summary>
+            <param name="templateType"></param>
+            <param name="sessionDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Program">
+            <summary>
+            Startup class of the CLI.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Program.Main(System.String[])">
+            <summary>
+            Startup method of the CLI.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Properties.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.CliFileFound">
+            <summary>
+              Looks up a localized string similar to CLI configuration file has been found..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.CliFileNotFound">
+            <summary>
+              Looks up a localized string similar to CLI configuration file has not been found..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.CommandSuccessfullyCreated">
+            <summary>
+              Looks up a localized string similar to Command has been created successfully..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.FileExistMessage">
+            <summary>
+              Looks up a localized string similar to One or more of the files already exist. Overriding is not possible for safety reasons..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.InvalidCliCommandUsage">
+            <summary>
+              Looks up a localized string similar to Invalid usage of CLI command..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.InvalidRequestCommand">
+            <summary>
+              Looks up a localized string similar to Request name must ends with Query or Command - example: GetSomethingQuery or MakeSomethingCommand.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.MissedCliConfigFile">
+            <summary>
+              Looks up a localized string similar to CLI configuration file cannot be found. Be sure you execute the command in the &apos;em-cli.json&apos; directory..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.PageSuccessfullyCreated">
+            <summary>
+              Looks up a localized string similar to Page has been created successfully..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.ProjectRequiresAName">
+            <summary>
+              Looks up a localized string similar to Project initialization requires project name parameter..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.ProjectSuccessfullyCreated">
+            <summary>
+              Looks up a localized string similar to Project structure has been successfully created..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.QuerySuccessfullyCreated">
+            <summary>
+              Looks up a localized string similar to Query has been created successfully..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.RequestCannotBeCreated">
+            <summary>
+              Looks up a localized string similar to Request cannot be created..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.SeeHelpForCli">
+            <summary>
+              Looks up a localized string similar to Type &apos;em&apos; to check available commands..
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Cli.Properties.Messages.SomethingUnexpectedHappened">
+            <summary>
+              Looks up a localized string similar to Something unexpected happened. :(.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.StaticConsolePrints">
+            <summary>
+            Static strings for console prints.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.StaticConsolePrints.PrintGeneralInformation">
+            <summary>
+            Prints the general information of the CLI.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.StaticConsolePrints.PrintHelpInformation">
+            <summary>
+            Prints the help information of the CLI.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Cli.Utilities">
+            <summary>
+            Utility functions.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Cli.Utilities.RecursiveDelete(System.IO.DirectoryInfo)">
+            <summary>
+            Deletes folders recursively.
+            </summary>
+            <param name="directory"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.MobileSdk</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration"/> class.
+            </summary>
+            <param name="rootBaseUrl"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration"/> class.
+            </summary>
+            <param name="hostMachineIp"></param>
+            <param name="addressPort"></param>
+            <param name="useHttps"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.RootBaseUrl">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.Headers">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.FacebookAppId">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.GoogleClientId">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.FacebookRedirectUrl">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.GoogleRedirectUrl">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.ToHostSettings">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.EmConfiguration.GetValueBasedOnDevicePlatform(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration">
+            <summary>
+            Emeraude mobile SDK configuration definition.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.Headers">
+            <summary>
+            Headers which will be send on each request.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.RootBaseUrl">
+            <summary>
+            Web API base URL.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.FacebookAppId">
+            <summary>
+            AppId for Facebook OAuth2 external authentication.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.GoogleClientId">
+            <summary>
+            ClientId for Google OAuth2 external authentication.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.FacebookRedirectUrl">
+            <summary>
+            Redirect URL for Facebook OAuth2 external authentication.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.GoogleRedirectUrl">
+            <summary>
+            Redirect URL for Google OAuth2 external authentication.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.ToHostSettings">
+            <summary>
+            Method that converts the configuration into host settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration.GetValueBasedOnDevicePlatform(System.String,System.String)">
+            <summary>
+            Get value based on the current platform.
+            </summary>
+            <param name="androidValue"></param>
+            <param name="iOSValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants">
+            <summary>
+            OAuth2 constants.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants.FacebookOAuth2InterceptorName">
+            <summary>
+            Facebook OAuth2 interceptor name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants.FacebookOAuth2DataHost">
+            <summary>
+            Facebook OAuth2 data host.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants.FacebookOAuth2DataPath">
+            <summary>
+            Facebook OAuth2 data path.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants.GoogleOAuth2InterceptorName">
+            <summary>
+            Google OAuth2 interceptor name.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.OAuth2Constants.GoogleOAuth2DataPath">
+            <summary>
+            Google OAuth2 data path.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Constants.Tokens">
+            <summary>
+            Available token keys strings.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.Tokens.AccessTokenString">
+            <summary>
+            Access token key string.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.Constants.Tokens.RefreshTokenString">
+            <summary>
+            Refresh token key string.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Converters.ErrorMessageToBoolConverter">
+            <summary>
+            Value converter for error message to success flag.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Converters.ErrorMessageToBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc />
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Converters.ErrorMessageToBoolConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc />
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Events.LanguageChangedEventArgs">
+            <summary>
+            Event args implementation for language change event.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Events.LanguageChangedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Events.LanguageChangedEventArgs"/> class.
+            </summary>
+            <param name="languageCode"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Events.LanguageChangedEventArgs.LanguageCode">
+            <summary>
+            Short code of the langauge.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Events.LoginCompletedEventArgs">
+            <summary>
+            Event args implementation for login completion event.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Events.LoginCompletedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Events.LoginCompletedEventArgs"/> class.
+            </summary>
+            <param name="succeeded"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Events.LoginCompletedEventArgs.Succeeded">
+            <summary>
+            Flag that indicates the success status of the login completion.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Extensions.ContainerRegistryExtensions">
+            <summary>
+            Extensions for <see cref="T:Prism.Ioc.IContainerRegistry"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Extensions.ContainerRegistryExtensions.RegisterEmeraudeCore(Prism.Ioc.IContainerRegistry,System.Action{Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings})">
+            <summary>
+            Register all required services of Emeraude Mobile SDK.
+            </summary>
+            <param name="containerRegistry"></param>
+            <param name="settingsAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Extensions.ContainerRegistryExtensions.RegisterEmeraudeLocalizer(Prism.Ioc.IContainerRegistry,System.Resources.ResourceManager,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore)">
+            <summary>
+            Register default Emeraude localizer service.
+            </summary>
+            <param name="containerRegistry"></param>
+            <param name="resourceManager"></param>
+            <param name="systemSettingsStore"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel">
+            <summary>
+            Abstraction for wrapping form with validations in ViewModel.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel.HasErrors">
+            <summary>
+            Flag that indicates the existance of model errors.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel.Errors">
+            <summary>
+            Dictionary that contains errors of model.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel.IsValid">
+            <summary>
+            Method that trigger the model validation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModel.AddError(System.String,System.String)">
+            <summary>
+            Add error to model state errors.
+            </summary>
+            <param name="propertyName"></param>
+            <param name="error"></param>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModelError">
+            <summary>
+            Error definition class for form model.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModelError.Key">
+            <summary>
+            Key of the error - the name of the property or the error is general - use empty string.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.Abstractions.FormModelError.Error">
+            <summary>
+            Error text.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.FormModels.ForgotPasswordFormModel">
+            <summary>
+            Form model for forgot password form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.ForgotPasswordFormModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.FormModels.ForgotPasswordFormModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.ForgotPasswordFormModel.Email">
+            <summary>
+            Email of the user.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.ForgotPasswordFormModel.IsValid">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel">
+            <summary>
+            Form model for login form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel.Email">
+            <summary>
+            Email of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.LoginFormModel.IsValid">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel">
+            <summary>
+            Form model for register form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.FullName">
+            <summary>
+            Full name of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.Email">
+            <summary>
+            Email of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.ConfirmedPassword">
+            <summary>
+            Confirmed user password.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.FormModels.RegisterFormModel.IsValid">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Helpers.Validators">
+            <summary>
+            Built validators for strings and parameters.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Helpers.Validators.IsValidEmail(System.String,System.String@)">
+            <summary>
+            Check validity of email address.
+            </summary>
+            <param name="email"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Helpers.Validators.IsValidPassword(System.String,System.String@,System.Int32)">
+            <summary>
+            Check validity of password based on Emeraude framework requirements.
+            </summary>
+            <param name="password"></param>
+            <param name="errorMessage"></param>
+            <param name="minLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.OAuth.OAuth2ProviderType">
+            <summary>
+            List of supported OAuth2 providers.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.OAuth.OAuth2ProviderType.Facebook">
+            <summary>
+            Facebook.
+            </summary>
+        </member>
+        <member name="F:Definux.Emeraude.MobileSdk.OAuth.OAuth2ProviderType.Google">
+            <summary>
+            Google.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.OAuth.OAuth2AuthenticatorHelper">
+            <summary>
+            Helper that contains predefined OAuth2 authenticators.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2AuthenticatorHelper.AuthenticationState">
+            <inheritdoc cref="T:Xamarin.Auth.OAuth2Authenticator"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.OAuth.OAuth2AuthenticatorHelper.CreateFacebookOAuth2Authenticator(Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration)">
+            <summary>
+            Creates predefined Facebook OAuth2 authenticator.
+            </summary>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.OAuth.OAuth2AuthenticatorHelper.CreateGoogleOAuth2Authenticator(Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration)">
+            <summary>
+            Creates predefined Google OAuth2 authenticator.
+            </summary>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult">
+            <summary>
+            OAuth2 result of the access token external authentication request.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.AccessToken">
+            <summary>
+            Access token.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.ExpiresIn">
+            <summary>
+            Expiration date.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.State">
+            <summary>
+            State of the OAuth2 request. Applicable for Facebook authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.ReauthorizeRequiredIn">
+            <summary>
+            Reauthorization time. Applicable for Facebook authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.DataAccessExpirationTime">
+            <summary>
+            Data access expiration time. Applicable for Facebook authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.RefreshToken">
+            <summary>
+            Refresh token. Applicable for Google authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.Scope">
+            <summary>
+            Scope of the request. Applicable for Google authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.TokenType">
+            <summary>
+            Type of the token. Applicable for Google authorization.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.OAuth.OAuth2TokenResult.IdToken">
+            <summary>
+            Identification of the token. Applicable for Google authorization.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.AuthenticationServiceAgent">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.AuthenticationServiceAgent.#ctor(Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration,Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.AuthenticationServiceAgent"/> class.
+            </summary>
+            <param name="configuration"></param>
+            <param name="clientFactory"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.AuthenticationServiceAgent.RequestTokenAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.AuthenticationServiceAgent.RequestTokenWithExternalProviderAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.HttpClientFactory">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.HttpClientFactory.#ctor(Definux.Emeraude.MobileSdk.ServiceAgents.Http.IRequestHeaderHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.HttpClientFactory"/> class.
+            </summary>
+            <param name="requestHeaderHelper"></param>
+        </member>
+        <member name="E:Definux.Emeraude.MobileSdk.ServiceAgents.Http.HttpClientFactory.AfterClientCreated">
+            <summary>
+            Event which is triggered when the HTTP client is created.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.HttpClientFactory.CreateClientAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory">
+            <summary>
+            Factory for creating HTTP client with all application settings.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory.CreateClientAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings)">
+            <summary>
+            Creates a HTTP client configured with connected web API.
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IRequestHeaderHelper">
+            <summary>
+            Request header helper that modify HTTP client.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IRequestHeaderHelper.InitializeHeadersAsync(System.Net.Http.HttpClient,Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings)">
+            <summary>
+            Apply specified <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings"/> into <seealso cref="T:System.Net.Http.HttpClient"/>.
+            </summary>
+            <param name="client"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.RequestHeaderHelper">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.IRequestHeaderHelper"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.RequestHeaderHelper.#ctor(Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.Http.RequestHeaderHelper"/> class.
+            </summary>
+            <param name="systemSettingsStore"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.Http.RequestHeaderHelper.InitializeHeadersAsync(System.Net.Http.HttpClient,Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent">
+            <summary>
+            Service agent that provides access to the authentication API.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent.RequestTokenAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest)">
+            <summary>
+            Request access token via ordinary login request with email and password.
+            </summary>
+            <param name="loginRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent.RequestTokenWithExternalProviderAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest)">
+            <summary>
+            Request access token via external provider token.
+            </summary>
+            <param name="externalLoginRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.ILoggingServiceAgent">
+            <summary>
+            Service agent that provides access to the logger API.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.LoggingServiceAgent">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.ILoggingServiceAgent"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.LoggingServiceAgent.#ctor(Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration,Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.LoggingServiceAgent"/> class.
+            </summary>
+            <param name="configuration"></param>
+            <param name="clientFactory"></param>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest.Provider">
+            <summary>
+            External login provider name.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest.AccessToken">
+            <summary>
+            External login provider access token.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest.Email">
+            <summary>
+            Request email.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest.Password">
+            <summary>
+            Request password.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Results.BearerAuthenticationResult">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Results.BearerAuthenticationResult.Success">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Results.BearerAuthenticationResult.Message">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Results.BearerAuthenticationResult.JsonWebToken">
+            <inheritdoc />
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Models.Results.BearerAuthenticationResult.RefreshToken">
+            <inheritdoc />
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent">
+            <summary>
+            Abstract service agent that provides all methods for HTTP request to the web API.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.#ctor(Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration,Definux.Emeraude.MobileSdk.ServiceAgents.Http.IHttpClientFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent"/> class.
+            </summary>
+            <param name="configuration"></param>
+            <param name="clientFactory"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.ParseJsonErrorAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Parse the error(in JSON format) from HTTP response.
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.ParseResult``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Parse the result from the HTTP response.
+            </summary>
+            <typeparam name="T">Result model.</typeparam>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.GetAsync``1(System.String)">
+            <summary>
+            Executes GET request to specified url from the target web API.
+            </summary>
+            <typeparam name="TResponseData">Result model.</typeparam>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PostAsync``1(System.String,``0)">
+            <summary>
+            Executes POST request to specified url with request model to the target web API that returns.
+            </summary>
+            <typeparam name="TRequestData">Request and result model.</typeparam>
+            <param name="requestUri"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PostAsync``2(System.String,``0)">
+            <summary>
+            Executes POST request to specified url with request model to the target web API that returns.
+            </summary>
+            <typeparam name="TRequestData">Request model.</typeparam>
+            <typeparam name="TReponseData">Result model.</typeparam>
+            <param name="requestUri"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PostWithoutResultAsync(System.String)">
+            <summary>
+            Execute POST request to specified url without a request model to the target web API that returns.
+            </summary>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PutAsync``1(System.String,``0)">
+            <summary>
+            Executes PUT request to specified url with request model to the target web API that returns.
+            </summary>
+            <typeparam name="TRequestData">Request and result model.</typeparam>
+            <param name="requestUri"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PutAsync``2(System.String,``0)">
+            <summary>
+            Executes PUT request to specified url with request model to the target web API that returns.
+            </summary>
+            <typeparam name="TRequestData">Request model.</typeparam>
+            <typeparam name="TReponseData">Result model.</typeparam>
+            <param name="requestUri"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PutWithoutResultAsync``1(System.String,``0)">
+            <summary>
+            Execute PUT request to specified url with a request model to the target web API that returns without a result.
+            </summary>
+            <typeparam name="TRequestData">Request model.</typeparam>
+            <param name="requestUri"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.PutWithoutResultAsync(System.String)">
+            <summary>
+            Execute PUT request to specified url without a request model to the target web API that returns without a result.
+            </summary>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgent.DeleteWithoutResultAsync(System.String)">
+            <summary>
+            Execute DELETE request to specified url to the target web API that returns without a result.
+            </summary>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError">
+            <summary>
+            Service agent request error implementation used for error encapsulation.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.#ctor(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError"/> class.
+            </summary>
+            <param name="extraParameters"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.#ctor(System.Guid,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError"/> class.
+            </summary>
+            <param name="identifier"></param>
+            <param name="extraParameters"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.Identifier">
+            <summary>
+            Identifier of the error.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.Type">
+            <summary>
+            Url of the error.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.Title">
+            <summary>
+            Title of the error.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.Status">
+            <summary>
+            Status code of the error.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.Code">
+            <summary>
+            Code of the error.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.ServiceAgentRequestError.ExtraParameters">
+            <summary>
+            Extra parameters for more details about the error.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings">
+            <summary>
+            Service agent host settings.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings.Headers">
+            <summary>
+            Dictionary with all headers which must be applied with any request to the web API.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ServiceAgents.Settings.HostSettings.Url">
+            <summary>
+            Base URL of the web API.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Services.EmStaticServiceProvider">
+            <summary>
+            Emeraude static service used for resolve a service from the services container.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.EmStaticServiceProvider.GetService``1">
+            <summary>
+            Get a service from services container.
+            </summary>
+            <typeparam name="T">Type of the service.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Services.Localizer">
+            <inheritdoc cref="T:Definux.Emeraude.Interfaces.Services.ILocalizer"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.Localizer.#ctor(System.Resources.ResourceManager,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Services.Localizer"/> class.
+            </summary>
+            <param name="resourceManager"></param>
+            <param name="systemSettingsStore"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Services.Localizer.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.Localizer.GetStaticContent(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.Localizer.GetStaticContentAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.Localizer.TranslateKey(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Services.Localizer.TranslateKeyAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage">
+            <summary>
+            Mobile implementation of language domain entity.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage.Code">
+            <summary>
+            Short code of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage.Name">
+            <summary>
+            Name of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage.NativeName">
+            <summary>
+            Native name of the language.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage.IsDefault">
+            <summary>
+            Flag that indicates whether the language is default for the system.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings">
+            <summary>
+            Implementation of <see cref="T:Definux.Emeraude.MobileSdk.Settings.ISettingsProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings.Languages">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Settings.EmeraudeMobileSettings.AddLanguage(System.String,System.String,System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Settings.ISettingsProvider">
+            <summary>
+            Definition of settings provider for the Emeraude Mobile SDK.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Settings.ISettingsProvider.Languages">
+            <summary>
+            List of all languages loaded in the application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Settings.ISettingsProvider.AddLanguage(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Method that add language to the collection of all languages.
+            </summary>
+            <param name="code"></param>
+            <param name="name"></param>
+            <param name="nativeName"></param>
+            <param name="isDefault"></param>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore.#ctor(Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent,Definux.Emeraude.MobileSdk.ServiceAgents.ILoggingServiceAgent,Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore"/> class.
+            </summary>
+            <param name="authenticationServiceAgent"></param>
+            <param name="loggingServiceAgent"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="E:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore.LoginCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore.IsAuthenticated">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore.RequestTokenAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.AuthenticationStore.RequestTokenWithExternalProviderAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore">
+            <summary>
+            Store that provides functionality for managing the authentication of the application.
+            </summary>
+        </member>
+        <member name="E:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore.LoginCompleted">
+            <summary>
+            Event which is triggered when a login try is completed (with or without a success).
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore.IsAuthenticated">
+            <summary>
+            Flag that indicate whether the user is authenticated or not.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore.RequestTokenAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.LoginRequest)">
+            <summary>
+            Request access token via ordinary login request with email and password by accessing the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent"/>.
+            </summary>
+            <param name="loginRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore.RequestTokenWithExternalProviderAsync(Definux.Emeraude.MobileSdk.ServiceAgents.Models.Requests.ExternalLoginRequest)">
+            <summary>
+            Request access token via external provider token by accessing the <see cref="T:Definux.Emeraude.MobileSdk.ServiceAgents.IAuthenticationServiceAgent"/>.
+            </summary>
+            <param name="externalLoginRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore">
+            <summary>
+            Store used for managing the built-in settings of the application.
+            </summary>
+        </member>
+        <member name="E:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore.LanguageChanged">
+            <summary>
+            Event which is triggered when the selected language is changed.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore.Languages">
+            <summary>
+            List of all registered languages.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore.SelectedLanguage">
+            <summary>
+            Currently selected language of the application.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore.SelectLanguage(Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage)">
+            <summary>
+            Set the specified language as selected one.
+            </summary>
+            <param name="language"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore.ApplyCurrentLanguage">
+            <summary>
+            Load previously selected language from the settubgs.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Stores.Store">
+            <summary>
+            Abstract implementation of store for state management.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.Store.#ctor(Definux.Emeraude.MobileSdk.ServiceAgents.ILoggingServiceAgent)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Stores.Store"/> class.
+            </summary>
+            <param name="loggingServiceAgent"></param>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.#ctor(Definux.Emeraude.MobileSdk.Settings.ISettingsProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore"/> class.
+            </summary>
+            <param name="settingsProvider"></param>
+        </member>
+        <member name="E:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.LanguageChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.Languages">
+            <inheritdoc/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.SelectedLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.SelectLanguage(Definux.Emeraude.MobileSdk.Settings.ApplicationLanguage)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.Stores.SystemSettingsStore.ApplyCurrentLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel">
+            <summary>
+            An abstract ViewModel that defines the binding model for a page that contains access to login, register and external login actions.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.Interfaces.Services.ILocalizer,Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore,Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="localizer"></param>
+            <param name="authenticationStore"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.Configuration">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Configuration.IEmConfiguration"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.AuthenticationStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.OAuthLoginPresenter">
+            <inheritdoc cref="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.OAuthLoginPresenter"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.OAuth2Authenticator">
+            <inheritdoc cref="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.OAuth2Authenticator"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.OAuth2AuthenticatorType">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.OAuth.OAuth2ProviderType"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.GoToLoginPageCommand">
+            <summary>
+            Command that redirect to login page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.GoToRegisterPageCommand">
+            <summary>
+            Command that redirect to register page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.LoginWithFacebookCommand">
+            <summary>
+            Command that login with Facebook.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.AccountViewModel.LoginWithGoogleCommand">
+            <summary>
+            Command that login with Google.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel">
+            <summary>
+            An abstract ViewModel that defines the binding model for a page that contains forgot password form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore,Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="authenticationStore"></param>
+            <param name="localizer"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel.AuthenticationStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel.SubmitForgotPasswordFormCommand">
+            <summary>
+            Command that submit the forgot password form.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ForgotPasswordViewModel.ForgotPasswordModel">
+            <summary>
+            Binding model for the forgot password form.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.LocalizerViewModel">
+            <summary>
+            ViewModel used for the language switcher.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.LocalizerViewModel.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.LocalizerViewModel"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="localizer"></param>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel">
+            <summary>
+            An abstract ViewModel that defines the binding model for a page that contains login form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore,Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="authenticationStore"></param>
+            <param name="localizer"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.AuthenticationStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.GoToForgotPasswordPageCommand">
+            <summary>
+            Command that redirect to forgot password page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.GoToRegisterPageCommand">
+            <summary>
+            Command that redirect to register page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.SubmitLoginCommand">
+            <summary>
+            Command that submit the login form.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.LoginViewModel.LoginModel">
+            <summary>
+            Binding model for the login form.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel">
+            <summary>
+            An abstract ViewModel that defines the binding model for a page that contains register form.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore,Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="authenticationStore"></param>
+            <param name="localizer"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel.AuthenticationStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.IAuthenticationStore"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel.GoToLoginPageCommand">
+            <summary>
+            Command that redirect to login page.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel.SubmitRegistrationCommand">
+            <summary>
+            Command that submit the register form.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.RegisterViewModel.RegisterModel">
+            <summary>
+            Binding model for the register form.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase">
+            <summary>
+            Abstract MVVM ViewModel that contains all needed services and methods.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.#ctor(Prism.Navigation.INavigationService,Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore,Definux.Emeraude.Interfaces.Services.ILocalizer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase"/> class.
+            </summary>
+            <param name="navigationService"></param>
+            <param name="systemSettingsStore"></param>
+            <param name="localizer"></param>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.NavigationService">
+            <inheritdoc cref="T:Prism.Navigation.INavigationService"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.SystemSettingsStore">
+            <inheritdoc cref="T:Definux.Emeraude.MobileSdk.Stores.ISystemSettingsStore"/>
+        </member>
+        <member name="P:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.Localizer">
+            <inheritdoc cref="T:Definux.Emeraude.Interfaces.Services.ILocalizer"/>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.Initialize(Prism.Navigation.INavigationParameters)">
+            <summary>
+            Method triggered on initialization of the view model.
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.OnNavigatedFrom(Prism.Navigation.INavigationParameters)">
+            <summary>
+            Method triggered on navigated from the view model.
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.OnNavigatedTo(Prism.Navigation.INavigationParameters)">
+            <summary>
+            Method triggered on navigated to the view model.
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.Destroy">
+            <summary>
+            Method triggered on destroy of the view model.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.OnLanguageChanged(System.Object,Definux.Emeraude.MobileSdk.Events.LanguageChangedEventArgs)">
+            <summary>
+            Method triggered when current language is changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.DisplayAlert(System.String,System.String,System.String)">
+            <summary>
+            Method that wrap current page display alert.
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+            <param name="cancel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.MobileSdk.ViewModels.ViewModelBase.GetTranslation(System.String)">
+            <summary>
+            Method that returns translation for specified key.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

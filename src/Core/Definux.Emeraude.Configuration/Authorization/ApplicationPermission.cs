@@ -32,6 +32,11 @@
         /// </summary>
         public string Value { get; set; }
 
+        /// <summary>
+        /// Implicit string conversion.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
         public static implicit operator string(ApplicationPermission permission)
         {
             return permission.Value;

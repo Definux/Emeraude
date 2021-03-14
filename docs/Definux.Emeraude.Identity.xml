@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Definux.Emeraude.Identity</name>
+    </assembly>
+    <members>
+        <member name="T:Definux.Emeraude.Identity.Common.StaticFunctions">
+            <summary>
+            Static functions used from identity infrastructure.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Common.StaticFunctions.GenerateRefreshToken">
+            <summary>
+            Generate random string used for refresh token string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.Role">
+            <summary>
+            Role entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityRole`1"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Entities.Role.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Entities.Role"/> class.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Entities.Role.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Entities.Role"/> class.
+            </summary>
+            <param name="roleName"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Entities.Role.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Entities.Role"/> class.
+            </summary>
+            <param name="roleName"></param>
+            <param name="description"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.Role.Description">
+            <summary>
+            Description of the role.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.RoleClaim">
+            <summary>
+            Role claim entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityRoleClaim`1"/>.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.User">
+            <summary>
+            Emeraude application user that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityUser`1"/>.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.Name">
+            <summary>
+            Name of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.RegistrationDate">
+            <summary>
+            Registration date of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.IsLockedOut">
+            <summary>
+            Property that indicates whether the user is locked out.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.AvatarUrl">
+            <summary>
+            User avatar url.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.AvatarRelativePath">
+            <summary>
+            User avatar relative path.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.RefreshToken">
+            <summary>
+            Refresh token used for requesting new Json Web Token.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Entities.User.RefreshTokenExpiration">
+            <summary>
+            Refresh token expiration date.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.UserClaim">
+            <summary>
+            User claim entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityUserClaim`1"/>.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.UserLogin">
+            <summary>
+            User login entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityUserLogin`1"/>.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.UserRole">
+            <summary>
+            User role entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityUserRole`1"/>.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Entities.UserToken">
+            <summary>
+            User token entity used from the application that implements ASP.NET Core <see cref="T:Microsoft.AspNetCore.Identity.IdentityUserToken`1"/>.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager">
+            <inheritdoc cref="T:Definux.Emeraude.Application.EventHandlers.IIdentityEventManager"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.#ctor(System.IServiceProvider,Microsoft.AspNetCore.Http.IHttpContextAccessor,Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager"/> class.
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="httpContextAccessor"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerLoginEventAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerExternalLoginEventAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerRegisterEventAsync(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerExternalRegisterEventAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerForgotPasswordEventAsync(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerResetPasswordEventAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerConfirmedEmailEventAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.EventHandlers.IdentityEventManager.TriggerRequestChangeEmailEventAsync(System.Guid,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Extensions.DatabaseContextExtensions">
+            <summary>
+            Extensions for <see cref="T:Definux.Emeraude.Application.Persistence.IEmContext"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.DatabaseContextExtensions.BuildRefreshToken(Definux.Emeraude.Application.Persistence.IEmContext,Definux.Emeraude.Identity.Entities.User)">
+            <summary>
+            Build refresh token for a user.
+            </summary>
+            <param name="context"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.DatabaseContextExtensions.ResetRefreshToken(Definux.Emeraude.Application.Persistence.IEmContext,Definux.Emeraude.Identity.Entities.User)">
+            <summary>
+            Reset refresh token for a user.
+            </summary>
+            <param name="context"></param>
+            <param name="user"></param>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.RegisterEmeraudeIdentity(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers Emeraude identity infrastructure.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToLoginEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has logged in the application via email/password form.
+            </summary>
+            <typeparam name="TEventHandler">Login event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToExternalLoginEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has logged in the application via external authentication provider.
+            </summary>
+            <typeparam name="TEventHandler">External login event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToRegisterEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has registered in the application via email/password form.
+            </summary>
+            <typeparam name="TEventHandler">Event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToExternalRegisterEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has registered in the application via external authentication provider.
+            </summary>
+            <typeparam name="TEventHandler">External register event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToForgotPasswordEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has made a request to reset his/her password.
+            </summary>
+            <typeparam name="TEventHandler">Forgot password event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToResetPasswordEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has reset his/her password.
+            </summary>
+            <typeparam name="TEventHandler">Reset password event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToConfirmedEmailEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has confirmed his email.
+            </summary>
+            <typeparam name="TEventHandler">Confirmed email event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Extensions.ServiceCollectionExtensions.SubscribeToRequestChangeEmailEvent``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register an event handler which will be triggered when a user has made a request for change its email.
+            </summary>
+            <typeparam name="TEventHandler">Request change email event handler.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Helpers.TwoFactorAuthenticationInfo">
+            <summary>
+            Help class that contains user id and two factor authentication login provider.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Helpers.TwoFactorAuthenticationInfo.UserId">
+            <summary>
+            Id of the user.
+            </summary>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Helpers.TwoFactorAuthenticationInfo.LoginProvider">
+            <summary>
+            Login provider.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.IdentityContext`1">
+            <summary>
+            Implementation of <see cref="T:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext"/> that wrap the identity functionality of ASP.NET Core for the purposes of Emeraude.
+            </summary>
+            <typeparam name="TContext"><see cref="T:Definux.Emeraude.Identity.IdentityContext`1"/>.</typeparam>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.IdentityContext`1.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.IdentityContext`1"/> class.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.IdentityContext`1.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.CurrentUserProvider">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.ICurrentUserProvider"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.CurrentUserProvider.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.CurrentUserProvider"/> class.
+            </summary>
+            <param name="httpAccessor"></param>
+            <param name="userManager"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Services.CurrentUserProvider.CurrentUserId">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.CurrentUserProvider.GetCurrentUserAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.DefaultUserManager">
+            <summary>
+            ASP.NET Core user manager wrapper for the purposes of Emeraude user manager.
+            </summary>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.DefaultUserManager.#ctor(Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.DefaultUserManager"/> class.
+            </summary>
+            <param name="userManager"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Services.DefaultUserManager.UserManager">
+            <summary>
+            ASP.NET Core User Manager instance.
+            </summary>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.RoleManager">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.IRoleManager"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.#ctor(Microsoft.AspNetCore.Identity.RoleManager{Definux.Emeraude.Identity.Entities.Role},Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Definux.Emeraude.Application.Persistence.IEmContext,Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.RoleManager"/> class.
+            </summary>
+            <param name="roleManager"></param>
+            <param name="userManager"></param>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.GetRolesAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.CreateRoleAsync(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.DeleteRoleAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.GetUserRolesAsync(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.UnassignAllRolesFromUserAsync(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.RoleManager.AssignRolesToUserAsync(Definux.Emeraude.Domain.Entities.IUser,System.Collections.Generic.IEnumerable{System.Guid})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.ITwoFactorAuthenticationService"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService.#ctor(Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},System.Text.Encodings.Web.UrlEncoder,Microsoft.Extensions.Options.IOptions{Definux.Emeraude.Configuration.Options.EmOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService"/> class.
+            </summary>
+            <param name="userManager"></param>
+            <param name="urlEncoder"></param>
+            <param name="optionsAccessor"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService.GetFormattedKeyAsync(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService.GenerateQrCodeUriAsync(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.TwoFactorAuthenticationService.IsTwoFactorEnabled(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.UserAvatarService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.IUserAvatarService"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserAvatarService.#ctor(Definux.Emeraude.Application.Persistence.IEmContext,Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Microsoft.AspNetCore.Hosting.IHostingEnvironment,Definux.Emeraude.Application.Files.ISystemFilesService,Definux.Emeraude.Application.Files.IRootsService,Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.UserAvatarService"/> class.
+            </summary>
+            <param name="context"></param>
+            <param name="userManager"></param>
+            <param name="hostEnvironment"></param>
+            <param name="systemFilesService"></param>
+            <param name="rootsService"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserAvatarService.ApplyAvatarToUserAsync(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserAvatarService.CreateAvatarFromUrlAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserAvatarService.CreateUserAvatarAsync(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserAvatarService.GetUserAvatarRelativePath(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.UserClaimsService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.IUserClaimsService"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserClaimsService.#ctor(Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Microsoft.AspNetCore.Identity.RoleManager{Definux.Emeraude.Identity.Entities.Role},Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.UserClaimsService"/> class.
+            </summary>
+            <param name="userManager"></param>
+            <param name="roleManager"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserClaimsService.CheckUserForAccessAdministrationPermissionAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserClaimsService.GetUserClaimsForCookieAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserClaimsService.GetUserClaimsForJwtTokenAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserClaimsService.GetAllUserClaimsAsync(Definux.Emeraude.Domain.Entities.IUser)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.UserManager">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.IUserManager"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.#ctor(Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Microsoft.AspNetCore.Http.IHttpContextAccessor,Definux.Emeraude.Application.Persistence.IEmContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.UserManager"/> class.
+            </summary>
+            <param name="userManager"></param>
+            <param name="httpContextAccessor"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Definux.Emeraude.Identity.Services.UserManager.Options">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.ChangeUserNameAsync(Definux.Emeraude.Domain.Entities.IUser,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.IsLockedOutAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.IsEmailConfirmedAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.CheckPasswordAsync(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.CreateUserObject(System.String,System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserManager.GetTwoFactorAuthenticationUserAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Definux.Emeraude.Identity.Services.UserTokensService">
+            <inheritdoc cref="T:Definux.Emeraude.Application.Identity.IUserTokensService"/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserTokensService.#ctor(Microsoft.AspNetCore.Identity.UserManager{Definux.Emeraude.Identity.Entities.User},Definux.Emeraude.Application.Persistence.IEmContext,Definux.Emeraude.Application.Identity.IUserClaimsService,Microsoft.Extensions.Options.IOptions{Definux.Utilities.Options.JsonWebTokenOptions},Definux.Emeraude.Application.Logger.IEmLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Definux.Emeraude.Identity.Services.UserTokensService"/> class.
+            </summary>
+            <param name="userManager"></param>
+            <param name="context"></param>
+            <param name="userClaimsService"></param>
+            <param name="jsonWebTokenOptions"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserTokensService.BuildJwtTokenForUserAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserTokensService.BuildJwtTokenForExternalUserAsync(Definux.Emeraude.Application.Requests.Identity.Commands.ExternalAuthentication.IExternalUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserTokensService.RefreshJwtTokenAsync(System.Nullable{System.Guid},System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Definux.Emeraude.Identity.Services.UserTokensService.ResetRefreshTokenAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

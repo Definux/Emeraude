@@ -5,7 +5,14 @@
     /// </summary>
     public enum OAuth2ProviderType
     {
+        /// <summary>
+        /// Facebook.
+        /// </summary>
         Facebook = 1,
+
+        /// <summary>
+        /// Google.
+        /// </summary>
         Google = 2,
     }
 }
