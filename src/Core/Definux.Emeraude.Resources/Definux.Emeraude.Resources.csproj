@@ -20,13 +20,6 @@
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
-    <DocumentationMarkdown>../../../docs/$(AssemblyName).md</DocumentationMarkdown>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-  </PropertyGroup>
-
   <ItemGroup>
     <Compile Update="ActionsTexts.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -99,5 +92,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocs>False</GenerateDocs>
+  </PropertyGroup>
+  <Import Project="..\..\..\builds\GenerateDocs.targets" Condition="'$(Configuration)|$(GenerateDocs)'=='Debug|True'"/>
 
 </Project>

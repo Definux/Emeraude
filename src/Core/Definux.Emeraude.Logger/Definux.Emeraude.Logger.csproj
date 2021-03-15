@@ -20,13 +20,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
-    <DocumentationMarkdown>../../../docs/$(AssemblyName).md</DocumentationMarkdown>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-  </PropertyGroup>
   
   <ItemGroup>
     <PackageReference Include="Definux.Utilities.Extensions" Version="1.0.38" />
@@ -60,5 +53,10 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
+  
+  <PropertyGroup>
+    <GenerateDocs>False</GenerateDocs>
+  </PropertyGroup>
+  <Import Project="..\..\..\builds\GenerateDocs.targets" Condition="'$(Configuration)|$(GenerateDocs)'=='Debug|True'" />
+  
 </Project>

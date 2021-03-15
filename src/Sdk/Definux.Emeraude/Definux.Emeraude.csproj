@@ -21,13 +21,6 @@
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
-    <DocumentationMarkdown>../../../docs/$(AssemblyName).md</DocumentationMarkdown>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-  </PropertyGroup>
-  
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Definux.Seo" Version="1.0.22" />
@@ -89,4 +82,9 @@
     </None>
   </ItemGroup>
 
+  <PropertyGroup>
+    <GenerateDocs>False</GenerateDocs>
+  </PropertyGroup>
+  <Import Project="..\..\..\builds\GenerateDocs.targets" Condition="'$(Configuration)|$(GenerateDocs)'=='Debug|True'"/>
+  
 </Project>

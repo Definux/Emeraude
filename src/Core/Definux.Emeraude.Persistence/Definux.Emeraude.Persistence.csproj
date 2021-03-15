@@ -21,13 +21,6 @@
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>../../../docs/$(AssemblyName).xml</DocumentationFile>
-    <DocumentationMarkdown>../../../docs/$(AssemblyName).md</DocumentationMarkdown>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
@@ -61,4 +54,9 @@
     </None>
   </ItemGroup>
 
+  <PropertyGroup>
+    <GenerateDocs>False</GenerateDocs>
+  </PropertyGroup>
+  <Import Project="..\..\..\builds\GenerateDocs.targets" Condition="'$(Configuration)|$(GenerateDocs)'=='Debug|True'"/>
+  
 </Project>
