@@ -60,7 +60,7 @@ namespace Definux.Emeraude.Admin.Controllers.Abstractions
         protected abstract string ParentProperty { get; }
 
         /// <summary>
-        /// Expression of the property from the child entity that referenced the parent entity. Comparison has to be made with <see cref="ParentIdentifier"/>
+        /// Expression of the property from the child entity that referenced the parent entity. Comparison has to be made with <see cref="ParentIdentifier"/>.
         /// </summary>
         protected abstract Expression<Func<TEntity, bool>> ParentExpression { get; }
 

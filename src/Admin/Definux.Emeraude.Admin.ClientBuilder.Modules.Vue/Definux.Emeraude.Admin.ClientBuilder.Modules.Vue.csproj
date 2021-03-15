@@ -20,7 +20,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>../../../Definux.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Definux.Emeraude.Domain\Definux.Emeraude.Domain.csproj" />
     <ProjectReference Include="..\Definux.Emeraude.Admin.ClientBuilder\Definux.Emeraude.Admin.ClientBuilder.csproj" />
@@ -143,6 +143,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Vsxmd" Version="1.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="WebMarkupMin.Core" Version="2.9.0" />
   </ItemGroup>
 
@@ -153,4 +157,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <PropertyGroup>
+    <GenerateDocs>False</GenerateDocs>
+  </PropertyGroup>
+  <Import Project="..\..\..\builds\GenerateDocs.targets" Condition="'$(Configuration)|$(GenerateDocs)'=='Debug|True'"/>
+  
 </Project>

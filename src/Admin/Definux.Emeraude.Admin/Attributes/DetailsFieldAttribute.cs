@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using Definux.Emeraude.Admin.UI.UIElements.Details;
 using Definux.Utilities.Functions;
 
 namespace Definux.Emeraude.Admin.Attributes
@@ -46,7 +47,7 @@ namespace Definux.Emeraude.Admin.Attributes
         public string Title { get; }
 
         /// <summary>
-        /// UI element type that implemented <see cref="IDetailsCardElement"/>.
+        /// UI element type that implemented <see cref="IDetailsFieldElement"/>.
         /// </summary>
         public Type UIElementType { get; }
     }

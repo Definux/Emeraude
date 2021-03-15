@@ -14,7 +14,7 @@ namespace Definux.Emeraude.Admin.Mapping.Mappers
     public static class EntityDetailsMapper
     {
         /// <summary>
-        /// Map entities to <see cref="DetailsViewModel"/> by using the decorated properties of the view model entity implementation by <seealso cref="DetailsCardAttribute"/>.
+        /// Map entities to <see cref="DetailsViewModel"/> by using the decorated properties of the view model entity implementation by <seealso cref="DetailsFieldAttribute"/>.
         /// </summary>
         /// <typeparam name="T">ViewModel entity implementation.</typeparam>
         /// <param name="entity"></param>

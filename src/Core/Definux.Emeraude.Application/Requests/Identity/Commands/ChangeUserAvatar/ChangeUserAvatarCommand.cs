@@ -34,6 +34,7 @@ namespace Definux.Emeraude.Application.Requests.Identity.Commands.ChangeUserAvat
             /// Initializes a new instance of the <see cref="ChangeUserAvatarCommandHandler"/> class.
             /// </summary>
             /// <param name="userAvatarService"></param>
+            /// <param name="logger"></param>
             public ChangeUserAvatarCommandHandler(IUserAvatarService userAvatarService, IEmLogger logger)
             {
                 this.userAvatarService = userAvatarService;

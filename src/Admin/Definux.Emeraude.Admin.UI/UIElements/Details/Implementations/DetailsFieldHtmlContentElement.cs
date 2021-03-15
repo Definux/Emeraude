@@ -14,6 +14,7 @@ namespace Definux.Emeraude.Admin.UI.UIElements.Details.Implementations
         /// <inheritdoc/>
         public bool HasClipboardCopyButton => true;
 
+        /// <inheritdoc/>
         public override void DefineHtmlBuilder()
         {
             string sourceString = string.Empty;

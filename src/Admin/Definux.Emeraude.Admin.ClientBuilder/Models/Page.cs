@@ -6,8 +6,13 @@ namespace Definux.Emeraude.Admin.ClientBuilder.Models
     /// <summary>
     /// Definition of page in the Client Builder environment.
     /// </summary>
-    public class Page : ClientBuilderEntity
+    public class Page
     {
+        /// <summary>
+        /// Id of the page.
+        /// </summary>
+        public string Id { get; set; }
+
         /// <summary>
         /// Name of the page.
         /// </summary>

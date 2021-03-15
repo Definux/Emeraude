@@ -56,6 +56,7 @@ namespace Definux.Emeraude.Application.Requests.Logging.Commands.LogFrontEndErro
                 this.mapper = mapper;
             }
 
+            /// <inheritdoc/>
             public async Task<SimpleResult> Handle(LogFrontEndErrorCommand request, CancellationToken cancellationToken)
             {
                 try

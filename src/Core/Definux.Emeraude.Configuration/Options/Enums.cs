@@ -9,7 +9,15 @@
         /// To be used only for test purposes.
         /// </summary>
         InMemoryDatabase = -1,
+
+        /// <summary>
+        /// Microsoft SQL Server.
+        /// </summary>
         MicrosoftSqlServer = 0,
+
+        /// <summary>
+        /// PostgreSQL
+        /// </summary>
         PostgreSql = 1,
     }
 }

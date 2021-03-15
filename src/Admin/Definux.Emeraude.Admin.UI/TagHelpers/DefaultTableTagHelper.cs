@@ -22,7 +22,7 @@ namespace Definux.Emeraude.Admin.UI.TagHelpers
         }
 
         /// <summary>
-        /// Columns of the table in form of arguments. Example of usage - column-1="Id"
+        /// Columns of the table in form of arguments. Example of usage - column-1="Id".
         /// </summary>
         [HtmlAttributeName("column")]
         public AttributeDictionary Columns { get; set; }

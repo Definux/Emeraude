@@ -68,7 +68,6 @@ namespace Definux.Emeraude.Application.Requests.Identity.Commands.ExternalAuthen
             /// Initializes a new instance of the <see cref="ExternalAuthenticationCommandHandler"/> class.
             /// </summary>
             /// <param name="logger"></param>
-            /// <param name="context"></param>
             /// <param name="userManager"></param>
             /// <param name="userAvatarService"></param>
             /// <param name="eventManager"></param>

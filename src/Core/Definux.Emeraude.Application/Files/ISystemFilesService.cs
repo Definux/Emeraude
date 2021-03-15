@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Definux.Emeraude.Domain.Logging;
-using Microsoft.AspNetCore.Http;
 
 namespace Definux.Emeraude.Application.Files
 {
@@ -21,7 +20,7 @@ namespace Definux.Emeraude.Application.Files
         /// Scan directory (public or private roots) for system items.
         /// </summary>
         /// <param name="directory"></param>
-        /// <param name="baseDirectory">Must be <see cref="PublicRootDirectory"/> or <see cref="PrivateRootDirectory"/>.</param>
+        /// <param name="baseDirectory">Must be <see cref="IRootsService.PublicRootDirectory"/> or <see cref="IRootsService.PrivateRootDirectory"/>.</param>
         /// <returns></returns>
         IEnumerable<SystemItem> ScanDirectory(string directory, string baseDirectory = "");
 

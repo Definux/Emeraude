@@ -12,21 +12,29 @@ namespace Definux.Emeraude.Admin.Models
     /// </summary>
     public class UserViewModel : IMapFrom<User>
     {
-        /// <inheritdoc cref="User.Id"/>
+        /// <summary>
+        /// Identifier of the user.
+        /// </summary>
         [DetailsField(0, typeof(DetailsFieldTextElement))]
         public string Id { get; set; }
 
-        /// <inheritdoc cref="User.Email"/>
+        /// <summary>
+        /// Email address of the user.
+        /// </summary>
         [TableColumn(1, typeof(TableTextElement))]
         [DetailsField(1, typeof(DetailsFieldTextElement))]
         public string Email { get; set; }
 
-        /// <inheritdoc cref="User.Name"/>
+        /// <summary>
+        /// Name of the user.
+        /// </summary>
         [TableColumn(2, typeof(TableTextElement))]
         [DetailsField(2, typeof(DetailsFieldTextElement))]
         public string Name { get; set; }
 
-        /// <inheritdoc cref="User.RegistrationDate"/>
+        /// <summary>
+        /// Registration date of the user.
+        /// </summary>
         [TableColumn(3, "Registration", typeof(TableDateTimeElement))]
         [DetailsField(3, "Registration", typeof(DetailsFieldDateTimeElement))]
         public DateTimeOffset RegistrationDate { get; set; }
@@ -38,12 +46,16 @@ namespace Definux.Emeraude.Admin.Models
         [DetailsField(4, typeof(DetailsFieldFlagElement))]
         public bool TwoFactorEnabled { get; set; }
 
-        /// <inheritdoc cref="User.IsLockedOut"/>
+        /// <summary>
+        /// Flag that indicates whether the user is locked out.
+        /// </summary>
         [TableColumn(5, "Locked Out", typeof(TableFlagElement))]
         [DetailsField(5, "Locked Out", typeof(DetailsFieldFlagElement))]
         public bool IsLockedOut { get; set; }
 
-        /// <inheritdoc cref="User.EmailConfirmed"/>
+        /// <summary>
+        /// Flat that indicates whether the user has been confirmed his email address.
+        /// </summary>
         [TableColumn(6, "Email Confirmed", typeof(TableFlagElement))]
         [DetailsField(6, "Email Confirmed", typeof(DetailsFieldFlagElement))]
         public bool EmailConfirmed { get; set; }

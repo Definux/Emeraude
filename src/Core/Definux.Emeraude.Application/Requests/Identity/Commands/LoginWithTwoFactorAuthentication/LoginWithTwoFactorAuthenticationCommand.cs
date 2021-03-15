@@ -44,7 +44,6 @@ namespace Definux.Emeraude.Application.Requests.Identity.Commands.LoginWithTwoFa
             /// Initializes a new instance of the <see cref="LoginWithTwoFactorAuthenticationCommandHandler"/> class.
             /// </summary>
             /// <param name="userManager"></param>
-            /// <param name="currentUserProvider"></param>
             public LoginWithTwoFactorAuthenticationCommandHandler(IUserManager userManager)
             {
                 this.userManager = userManager;

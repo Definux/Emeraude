@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <DocumentationFile>..\..\..\docs\$(AssemblyName).xml</DocumentationFile>
+        <DocumentationMarkdown>..\..\..\docs\$(AssemblyName).md</DocumentationMarkdown>
+        <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
+    </PropertyGroup>
+</Project>

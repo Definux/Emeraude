@@ -9,6 +9,12 @@ namespace Definux.Emeraude.Admin.UI.HtmlBuilders
     /// </summary>
     public class DatePickerHtmlBuilder : HtmlBuilder.HtmlBuilder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatePickerHtmlBuilder"/> class.
+        /// </summary>
+        /// <param name="targetProperty"></param>
+        /// <param name="value"></param>
+        /// <param name="placeholder"></param>
         public DatePickerHtmlBuilder(string targetProperty, DateTime? value, string placeholder)
         {
             var pickerId = Guid.NewGuid().ToString().Replace("-", string.Empty);

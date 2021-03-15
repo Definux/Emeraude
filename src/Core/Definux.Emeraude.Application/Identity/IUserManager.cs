@@ -99,10 +99,10 @@ namespace Definux.Emeraude.Application.Identity
         /// <inheritdoc cref="UserManager{TUser}.CountRecoveryCodesAsync"/>
         Task<int> CountRecoveryCodesAsync(IUser user);
 
-        /// <inheritdoc cref="UserManager{TUser}.CreateAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.CreateAsync(TUser)"/>
         Task<IdentityResult> CreateAsync(IUser user);
 
-        /// <inheritdoc cref="UserManager{TUser}.CreateAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.CreateAsync(TUser,string)"/>
         Task<IdentityResult> CreateAsync(IUser user, string password);
 
         /// <inheritdoc cref="UserManager{TUser}.CreateSecurityTokenAsync"/>
@@ -111,16 +111,16 @@ namespace Definux.Emeraude.Application.Identity
         /// <inheritdoc cref="UserManager{TUser}.DeleteAsync"/>
         Task<IdentityResult> DeleteAsync(IUser user);
 
-        /// <inheritdoc cref="UserManager{TUser}.FindUserByEmailAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.FindByEmailAsync"/>
         Task<IUser> FindUserByEmailAsync(string email);
 
-        /// <inheritdoc cref="UserManager{TUser}.FindUserByIdAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.FindByIdAsync"/>
         Task<IUser> FindUserByIdAsync(Guid userId);
 
-        /// <inheritdoc cref="UserManager{TUser}.FindUserByLoginAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.FindByLoginAsync"/>
         Task<IUser> FindUserByLoginAsync(string loginProvider, string providerKey);
 
-        /// <inheritdoc cref="UserManager{TUser}.FindUserByNameAsync"/>
+        /// <inheritdoc cref="UserManager{TUser}.FindByNameAsync"/>
         Task<IUser> FindUserByNameAsync(string userName);
 
         /// <inheritdoc cref="UserManager{TUser}.GenerateChangeEmailTokenAsync"/>
